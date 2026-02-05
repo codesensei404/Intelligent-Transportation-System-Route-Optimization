@@ -1,0 +1,350 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\begin{center}
+    \LARGE \textbf{Lecture Scribe: Random Variables, Expectation, CDF and PDF}
+\end{center}
+
+\section*{(1) Previous Lecture Recap: Random Variables (RVs)}
+
+\subsection*{Definition}
+
+A \textbf{Random Variable (RV)} is a function that assigns a real number to each outcome of a random experiment.
+
+Let:
+\begin{itemize}
+    \item $S$ be the sample space
+    \item $X$ be a random variable
+\end{itemize}
+
+Then:
+\[
+X: S \rightarrow \mathbb{R}
+\]
+
+Each outcome $s \in S$ is mapped to a numerical value $X(s)$.
+
+\subsection*{Classification of Random Variables}
+
+\begin{enumerate}
+    \item \textbf{Discrete Random Variable} \\
+    Takes values from a \textbf{countable set}.
+    \begin{itemize}
+        \item Example: Number of heads in coin tosses.
+    \end{itemize}
+
+    \item \textbf{Continuous Random Variable} \\
+    Takes values from a \textbf{continuous interval}.
+    \begin{itemize}
+        \item Example: Time, height, weight.
+    \end{itemize}
+\end{enumerate}
+
+This lecture focuses primarily on \textbf{discrete random variables} and their properties.
+
+\section*{(2) Independent Events}
+
+\subsection*{Definition}
+
+Two events $A$ and $B$ are said to be \textbf{independent} if the occurrence of one does not affect the probability of the other.
+
+Mathematically:
+\[
+P(A \cap B) = P(A)P(B)
+\]
+
+\subsection*{Equivalent Form (Conditional Probability)}
+
+If $P(B) > 0$,
+\[
+P(A \mid B) = P(A)
+\]
+
+This shows that knowing $B$ has occurred gives no additional information about $A$.
+
+\subsection*{Example}
+
+Consider tossing two fair coins.
+
+\begin{itemize}
+    \item Event $A$: First coin is Head
+    \item Event $B$: Second coin is Head
+\end{itemize}
+
+\[
+P(A) = \frac{1}{2}, \quad P(B) = \frac{1}{2}
+\]
+
+\[
+P(A \cap B) = \frac{1}{4}
+\]
+
+Since:
+\[
+P(A \cap B) = P(A)P(B)
+\]
+
+The events are \textbf{independent}.
+
+\section*{(3) Types of Discrete Random Variables}
+
+\subsection*{(a) Bernoulli Random Variable}
+
+\subsubsection*{Definition}
+
+A \textbf{Bernoulli RV} represents an experiment with exactly \textbf{two outcomes}:
+\begin{itemize}
+    \item Success with probability $p$
+    \item Failure with probability $1-p$
+\end{itemize}
+
+The random variable $X$ is defined as:
+\[
+X =
+\begin{cases}
+1, & \text{success} \\
+0, & \text{failure}
+\end{cases}
+\]
+
+\subsubsection*{Probability Mass Function (PMF)}
+
+\[
+P(X=x) = p^x(1-p)^{1-x}, \quad x \in \{0,1\}
+\]
+
+\subsection*{(b) Binomial Random Variable}
+
+\subsubsection*{Definition}
+
+A \textbf{Binomial RV} counts the number of successes in $n$ independent Bernoulli trials, each having success probability $p$.
+
+\[
+X \sim \text{Bin}(n,p)
+\]
+
+\subsubsection*{Assumptions}
+
+\begin{enumerate}
+    \item Fixed number of trials $n$
+    \item Each trial is independent
+    \item Each trial has two outcomes
+    \item Probability of success is constant
+\end{enumerate}
+
+\subsubsection*{PMF}
+
+\[
+P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}, \quad k = 0,1,\ldots,n
+\]
+
+\subsection*{(c) Geometric Random Variable}
+
+\subsubsection*{Definition}
+
+A \textbf{Geometric RV} represents the number of trials required until the \textbf{first success} occurs.
+
+\[
+X \sim \text{Geom}(p)
+\]
+
+\subsubsection*{PMF}
+
+\[
+P(X = k) = (1-p)^{k-1}p, \quad k = 1,2,3,\ldots
+\]
+
+\subsection*{(d) Poisson Random Variable}
+
+\subsubsection*{Definition}
+
+A \textbf{Poisson RV} models the number of occurrences of an event in a fixed interval when events occur:
+\begin{itemize}
+    \item Independently
+    \item At a constant average rate $\lambda$
+\end{itemize}
+
+\[
+X \sim \text{Poisson}(\lambda)
+\]
+
+\subsubsection*{PMF}
+
+\[
+P(X = k) = \frac{e^{-\lambda}\lambda^k}{k!}, \quad k = 0,1,2,\ldots
+\]
+
+\section*{(4) Expectation of Random Variables}
+
+\subsection*{(a) Definition of Expectation}
+
+For a discrete RV $X$:
+\[
+E[X] = \sum_x x \, P(X = x)
+\]
+
+\subsection*{Example}
+
+Let $X$ be a Bernoulli random variable with parameter $p$.
+
+Possible values:
+\begin{itemize}
+    \item $X=1$ with probability $p$
+    \item $X=0$ with probability $1-p$
+\end{itemize}
+
+Step-by-step:
+\[
+E[X] = 1\cdot p + 0\cdot (1-p) = p
+\]
+
+\subsection*{(b) Expectation of a Function of an RV}
+
+If $Y = g(X)$, then:
+\[
+E[g(X)] = \sum_x g(x)P(X=x)
+\]
+
+This formula is used directly without finding the distribution of $Y$.
+
+\subsection*{(c) Linear Operation with Expectation}
+
+For constants $a$ and $b$:
+\[
+E[aX + b] = aE[X] + b
+\]
+
+More generally:
+\[
+E[X + Y] = E[X] + E[Y]
+\]
+
+This property holds \textbf{regardless of independence}.
+
+\subsection*{(d) Moments and Central Moments}
+
+\subsubsection*{n\textsuperscript{th} Moment}
+
+\[
+E[X^n]
+\]
+
+\subsubsection*{Central Moment}
+
+\[
+E[(X - \mu)^n], \quad \mu = E[X]
+\]
+
+\subsection*{Variance}
+
+\[
+\text{Var}(X) = E[(X - \mu)^2]
+\]
+
+Expanding step-by-step:
+\[
+\text{Var}(X) = E[X^2] - (E[X])^2
+\]
+
+\subsection*{Skewness}
+
+\[
+\text{Skewness} = \frac{E[(X-\mu)^3]}{\sigma^3}
+\]
+
+\subsection*{Kurtosis}
+
+\[
+\text{Kurtosis} = \frac{E[(X-\mu)^4]}{\sigma^4}
+\]
+
+\section*{(6) Cumulative Distribution Function (CDF)}
+
+\subsection*{Definition}
+
+The \textbf{CDF} of a random variable $X$ is defined as:
+\[
+F_X(x) = P(X \le x)
+\]
+
+\subsection*{Properties}
+
+\begin{enumerate}
+    \item $0 \le F_X(x) \le 1$
+    \item $F_X(x)$ is non-decreasing
+    \item $F_X(x)$ is right-continuous
+    \item 
+\[
+\lim_{x \to -\infty} F_X(x) = 0, \quad
+\lim_{x \to \infty} F_X(x) = 1
+\]
+\end{enumerate}
+
+\subsection*{Example}
+
+Let:
+\[
+P(X=1)=0.3,\quad P(X=2)=0.5,\quad P(X=3)=0.2
+\]
+
+Step-by-step:
+\[
+F_X(1)=0.3
+\]
+\[
+F_X(2)=0.3+0.5=0.8
+\]
+\[
+F_X(3)=1
+\]
+
+\section*{(7) Probability Density Function (PDF)}
+
+\subsection*{Definition}
+
+A function $f_X(x)$ is a \textbf{PDF} of a continuous random variable $X$ if:
+\begin{enumerate}
+    \item $f_X(x) \ge 0$
+    \item 
+\[
+\int_{-\infty}^{\infty} f_X(x)\,dx = 1
+\]
+\end{enumerate}
+
+\subsection*{Relation between PDF and CDF}
+
+\[
+F_X(x) = \int_{-\infty}^{x} f_X(t)\,dt
+\]
+
+If $F_X(x)$ is differentiable:
+\[
+f_X(x) = \frac{d}{dx}F_X(x)
+\]
+
+\subsection*{Example}
+
+Given:
+\[
+f_X(x)=
+\begin{cases}
+2x, & 0 \le x \le 1 \\
+0, & \text{otherwise}
+\end{cases}
+\]
+
+Step-by-step:
+\begin{itemize}
+    \item For $x<0$: $F_X(x)=0$
+    \item For $0 \le x \le 1$:
+\[
+F_X(x)=\int_0^x 2t\,dt = x^2
+\]
+    \item For $x>1$: $F_X(x)=1$
+\end{itemize}
+
+\end{document}
