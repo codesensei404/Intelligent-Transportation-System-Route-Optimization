@@ -18,7 +18,282 @@ The below is the File Structure for the Github repository according to the given
 📦Intelligent-Transportation-System-Route-Optimization
  ┣ 📂.dist
  ┣ 📂Lecture_Scribe
- ┃ ┗ 📂Lecture_01
+ ┃ ┣ 📂S1_G8_ITS_L10_(S_CoT)
+ ┃ ┃ ┣ 📂Abdulwahab_Shaikh_AU2440099_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Dhruvi_Chavda_AU2440236_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Manthangiri_Gosai_AU2440294_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Vruddhi_Madam_AU2440137_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┗ 📂Yagnik_Trivedi_AU2440127_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┣ 📂S1_G8_ITS_L14_(S_CoT)
+ ┃ ┃ ┣ 📂Abdulwahab_Shaikh_AU2440099_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Dhruvi_Chavda_AU2440236_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Manthangiri_Gosai_AU2440294_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Vruddhi_Madam_AU2440137_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┗ 📂Yagnik_Trivedi_AU2440127_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┣ 📂S1_G8_ITS_L18_(S_CoT)
+ ┃ ┃ ┣ 📂Abdulwahab_Shaikh_AU2440099_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Dhruvi_Chavda_AU2440236_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Manthangiri_Gosai_AU2440294_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Vruddhi_Madam_AU2440137_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┗ 📂Yagnik_Trivedi_AU2440127_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┣ 📂S1_G8_ITS_L22_(S_CoT)
+ ┃ ┃ ┣ 📂Abdulwahab_Shaikh_AU2440099_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Dhruvi_Chavda_AU2440236_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Manthangiri_Gosai_AU2440294_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Vruddhi_Madam_AU2440137_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┗ 📂Yagnik_Trivedi_AU2440127_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┣ 📂S1_G8_ITS_L26_(S_CoT)
+ ┃ ┃ ┣ 📂Abdulwahab_Shaikh_AU2440099_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Dhruvi_Chavda_AU2440236_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Manthangiri_Gosai_AU2440294_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Vruddhi_Madam_AU2440137_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┗ 📂Yagnik_Trivedi_AU2440127_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┗ 📂S1_G8_ITS_L6_(S_CoT)
+ ┃ ┃ ┣ 📂Abdulwahab_Shaikh_AU2440099_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Dhruvi_Chavda_AU2440236_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Manthangiri_Gosai_AU2440294_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┣ 📂Vruddhi_Madam_AU2440137_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┗ 📂Yagnik_Trivedi_AU2440127_Lecture_Scribe
+ ┃ ┃ ┃ ┣ 📂Chat_Link
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Chat_PDF
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📂Prompt
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📂Scribe
+ ┃ ┃ ┃ ┃ ┗ 📄placeholder.txt
  ┣ 📂Project Milestone 01
  ┃ ┣ 📂Concept Map
  ┃ ┃ ┣ 📄Live_Concept_Map_Link
