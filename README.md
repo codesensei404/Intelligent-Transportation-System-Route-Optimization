@@ -18,17 +18,17 @@ The below is the File Structure for the Github repository according to the given
 
 ```
 📦Intelligent-Transportation-System-Route-Optimization
- ┣ 📂.dist
  ┣ 📂Lecture_Scribe
- ┃ ┣ 📂S1_G8_ITS_L10_S_(CoT)
+ ┃ ┣ 📂S1_G8_ITS_L10_(S_CoT)
  ┃ ┃ ┣ 📂Chat_Link
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📄S1_G8_Chat_Link_L10_(S_CoT)_AU2440099_Abdulwahab_Shaikh.txt
  ┃ ┃ ┣ 📂Chat_PDF
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📄S1_G8_ChatPDF_L10_(S_CoT)_AU2440099_Abdulwahab_Shaikh.pdf
  ┃ ┃ ┣ 📂Prompt
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📄S1_G8_Prompt_L10_(S_CoT)_AU2440099_Abdulwahab_Shaikh.txt
  ┃ ┃ ┗ 📂Scribe
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📄S1_G8_L10_Scribe_(S_CoT)_AU2440099_Abdulwahab_Shaikh.pdf
+ ┃ ┃ ┃ ┗ 📄S1_G8_L10_Scribe_(S_CoT)_AU2440099_Abdulwahab_Shaikh.tex
  ┃ ┣ 📂S1_G8_ITS_L14_(S_CoT)
  ┃ ┃ ┣ 📂Chat_Link
  ┃ ┃ ┃ ┗ 📄placeholder.txt
@@ -67,13 +67,14 @@ The below is the File Structure for the Github repository according to the given
  ┃ ┃ ┃ ┗ 📄placeholder.txt
  ┃ ┗ 📂S1_G8_ITS_L6_(S_CoT)
  ┃ ┃ ┣ 📂Chat_Link
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📄S1_G8_Chat_Link_L6_(S_CoT)_AU2440099_Abdulwahab_Shaikh.txt
  ┃ ┃ ┣ 📂Chat_PDF
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📄S1_G8_L6_ChatPDF_(S_CoT)_AU2440099_Abdulwahab_Shaikh.pdf
  ┃ ┃ ┣ 📂Prompt
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📄S1_G8_Prompt_L6_(S_CoT)_AU2440099_Abdulwahab_Shaikh.txt
  ┃ ┃ ┗ 📂Scribe
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📄S1_G8_L6_Scribe_(S_CoT)_AU2440099_Abdulwahab_Shaikh.pdf
+ ┃ ┃ ┃ ┗ 📄S1_G8_L6_Scribe_(S_CoT)_AU2440099_Abdulwahab_Shaikh.tex
  ┣ 📂Project Milestone 01
  ┃ ┣ 📂Concept Map
  ┃ ┃ ┣ 📄Live_Concept_Map_Link
