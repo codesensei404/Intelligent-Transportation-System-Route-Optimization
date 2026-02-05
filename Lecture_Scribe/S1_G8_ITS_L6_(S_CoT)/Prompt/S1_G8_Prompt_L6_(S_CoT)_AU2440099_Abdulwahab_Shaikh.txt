@@ -1,0 +1,47 @@
+Prompt-1: To generate the actual Scribe
+
+Generate a lecture scribe suitable for exam preparation based on the provided context. While generating the Scribe, reason step by step through definitions, assumptions, proofs and example solutions exactly as presented in the provided context. Make sure you give the step by step derivation for the problems and example solutions. Make the logical flow explicit so that a student can follow the reasoning during revision. Do not introduce any material or derivation which is not present in the context.
+
+(1) Previous Lecture Recap: Random Variables (RVs)
+
+(2) Independent Events
+
+Definition and Example
+
+(3) Types of Discrete Random Variables
+
+Bernoulli RV
+Binomial RV
+Geometric RV
+Poisson RV
+
+(4) Expectation of RVs
+
+Definition and Example
+Expectation of a Function of RV
+Linear Operation with Expectation
+ntʰ Moments and Central Moments of RVs: Variance, Skewness and Kurtosis
+
+(6) The Cumulative Density Function (CDF)
+
+Definition, Properties
+Examples
+
+(7) The Probability Density Function (PDF)
+
+Definition, Properties
+Examples
+
+
+
+
+
+
+
+
+
+Prompt-2: 
+
+For turning the Scribe to LaTeX
+
+Generate a LaTeX code based on the given Lecture Scribe. Do not change any equation or word formation initially in the Scribe and also do not include any other external information or concepts which are not already in the Scribe.
