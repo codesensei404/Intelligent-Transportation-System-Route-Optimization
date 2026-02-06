@@ -1,0 +1,266 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+
+\begin{document}
+
+\section*{Lecture 6 (L6) – Probability Theory}
+\section*{Exam Preparation Scribe}
+
+\section*{1. Previous Lecture Recap: Random Variables (RVs)}
+
+\textbf{Definition: Random Variable}
+
+A random variable (RV) is a real-valued function defined on the sample space of a random experiment.
+
+It assigns a numerical value to each outcome.
+
+Usually denoted by capital letters such as $X, Y$.
+
+\textbf{Types of Random Variables}
+
+Discrete Random Variable: Takes countable values.
+
+Continuous Random Variable: Takes values over a continuous interval.
+
+\section*{2. Independent Events}
+
+\textbf{Definition}
+
+Two events $A$ and $B$ are said to be independent if
+
+\[
+P(A \cap B) = P(A)P(B)
+\]
+
+This means that the occurrence of one event does not affect the probability of the other.
+
+\textbf{Example}
+
+If a coin is tossed and a die is rolled:
+
+Event $A$: Coin shows Head
+
+Event $B$: Die shows 3
+
+Since the coin toss does not affect the die roll,
+
+\[
+P(A \cap B) = P(A)P(B)
+\]
+
+\section*{3. Types of Discrete Random Variables}
+
+\subsection*{3.1 Bernoulli Random Variable}
+
+\textbf{Definition}
+
+A Bernoulli random variable represents a single experiment with two outcomes:
+
+Success (1) with probability $p$
+
+Failure (0) with probability $1-p$
+
+\textbf{Probability Mass Function (PMF)}
+
+\[
+P(X=x)=
+\begin{cases}
+p, & x=1 \\
+1-p, & x=0
+\end{cases}
+\]
+
+\subsection*{3.2 Binomial Random Variable}
+
+\textbf{Definition}
+
+A Binomial random variable counts the number of successes in $n$ independent Bernoulli trials with success probability $p$.
+
+\textbf{PMF}
+
+\[
+P(X=k)=\binom{n}{k}p^{k}(1-p)^{n-k}, \quad k=0,1,\ldots,n
+\]
+
+\subsection*{3.3 Geometric Random Variable}
+
+\textbf{Definition}
+
+A Geometric random variable represents the number of trials needed to get the first success.
+
+\textbf{PMF}
+
+\[
+P(X=k)=(1-p)^{k-1}p, \quad k=1,2,3,\ldots
+\]
+
+\subsection*{3.4 Poisson Random Variable}
+
+\textbf{Definition}
+
+A Poisson random variable models the number of occurrences of an event in a fixed interval.
+
+\textbf{PMF}
+
+\[
+P(X=k)=\frac{\lambda^{k}e^{-\lambda}}{k!}, \quad k=0,1,2,\ldots
+\]
+
+where $\lambda>0$ is the mean rate.
+
+\section*{4. Expectation of Random Variables}
+
+\subsection*{4.1 Definition of Expectation}
+
+For a discrete random variable $X$,
+
+\[
+E[X]=\sum_{x} xP(X=x)
+\]
+
+\textbf{Example}
+
+If
+
+\[
+P(X=0)=\frac{1}{2}, \quad P(X=1)=\frac{1}{2}
+\]
+
+then
+
+\[
+E[X]=0\cdot\frac{1}{2}+1\cdot\frac{1}{2}=\frac{1}{2}
+\]
+
+\subsection*{4.2 Expectation of a Function of an RV}
+
+If $Y=g(X)$, then
+
+\[
+E[g(X)]=\sum_{x} g(x)P(X=x)
+\]
+
+\subsection*{4.3 Linear Operation with Expectation}
+
+For constants $a,b$,
+
+\[
+E[aX+b]=aE[X]+b
+\]
+
+\section*{5. Moments of Random Variables}
+
+\subsection*{5.1 nth Moment}
+
+The nth moment of $X$ is
+
+\[
+E[X^{n}]
+\]
+
+\subsection*{5.2 Central Moments}
+
+\textbf{Variance}
+
+\[
+\text{Var}(X)=E[(X-E[X])^{2}]=E[X^{2}]-(E[X])^{2}
+\]
+
+\textbf{Skewness}
+
+The third central moment:
+
+\[
+E[(X-E[X])^{3}]
+\]
+
+\textbf{Kurtosis}
+
+The fourth central moment:
+
+\[
+E[(X-E[X])^{4}]
+\]
+
+\section*{6. Cumulative Distribution Function (CDF)}
+
+\textbf{Definition}
+
+The CDF of a random variable $X$ is
+
+\[
+F_X(x)=P(X\le x)
+\]
+
+\textbf{Properties}
+
+\[
+0 \le F_X(x) \le 1
+\]
+
+$F_X(x)$ is non-decreasing
+
+\[
+\lim_{x\to -\infty} F_X(x)=0
+\]
+
+\[
+\lim_{x\to \infty} F_X(x)=1
+\]
+
+\textbf{Example}
+
+For a discrete RV,
+
+\[
+F_X(x)=\sum_{t\le x} P(X=t)
+\]
+
+\section*{7. Probability Density Function (PDF)}
+
+\textbf{Definition}
+
+For a continuous random variable $X$, the PDF $f_X(x)$ satisfies
+
+\[
+P(a\le X\le b)=\int_{a}^{b} f_X(x)\,dx
+\]
+
+\textbf{Properties}
+
+\[
+f_X(x)\ge 0
+\]
+
+\[
+\int_{-\infty}^{\infty} f_X(x)\,dx=1
+\]
+
+\[
+F_X(x)=\int_{-\infty}^{x} f_X(t)\,dt
+\]
+
+\textbf{Example}
+
+If
+
+\[
+f_X(x)=
+\begin{cases}
+1, & 0\le x\le 1 \\
+0, & \text{otherwise}
+\end{cases}
+\]
+
+then
+
+\[
+F_X(x)=
+\begin{cases}
+0, & x<0 \\
+x, & 0\le x\le 1 \\
+1, & x>1
+\end{cases}
+\]
+
+\end{document}
