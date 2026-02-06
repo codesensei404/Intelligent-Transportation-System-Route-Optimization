@@ -1,0 +1,10 @@
+Prompt-1: to generate scribe
+
+generate a lecture scribe for L6 that can be used for exam preparation. Write the scribe by reason step by step through definations, notation, proofs and example solutions exactly given in the provided context. Give step-by-step derivations for problems and examples solution. Write scribe with a clear logical flow so that student can understand easily. Do not include any points or derivations which is not present in the context. use both pdf for making best scribe. (1) Previous Lecture Recap: Random Variables (RVs)   (2) Independent Events: defination and example (3) Types of Discrete Random Variables: Bernoulli RV,  Binomial RV, Geometric RV, Poisson RV  (4) Expectation of RVs: Defination and example, Expectation of a function of RV, Linear operation with Expectation, nth moment and central moments of RVs: Variance, Skewness and Kurtosis (6) The Cumulative Density Function (CDF): Defination, properties and Example (7) The Probability Density Function (PDF): Defination, Properties and Example
+
+
+
+
+Prompt-2: to generate LaTeX code
+
+​generate a LaTeX code based on the given lecture scribe. Do not change any word or equation formation. Keep the content exactly same as the original scribe. Do not add or remove any information.
