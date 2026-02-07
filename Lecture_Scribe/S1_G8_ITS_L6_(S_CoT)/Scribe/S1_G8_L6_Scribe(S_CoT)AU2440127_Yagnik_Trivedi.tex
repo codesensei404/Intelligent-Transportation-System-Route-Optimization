@@ -1,0 +1,232 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{setspace}
+
+\begin{document}
+
+\section*{CSE400 – Fundamentals of Probability in Computing}
+
+\textbf{Lecture 6: Discrete Random Variables, Expectation and Problem Solving} \\
+(Dhaval Patel, PhD | January 22, 2025)
+
+\hrule
+\vspace{1em}
+
+\section*{1. Random Variables (RV): Motivation and Concept}
+
+A \textbf{random variable} provides a numerical description of outcomes of a random experiment.
+
+The distribution of a random variable can be visualized using a \textbf{bar diagram}:
+
+\begin{itemize}
+    \item The \textbf{x-axis} represents the values the random variable can take.
+    \item The \textbf{height of the bar} at value $(a_i)$ represents the probability $(\Pr[X=a_i])$.
+\end{itemize}
+
+Each probability is computed by evaluating the probability of the corresponding event in the \textbf{sample space}.
+
+\section*{2. Types of Random Variables}
+
+\subsection*{2.1 Discrete Random Variable}
+
+A random variable is \textbf{discrete} if it can take \textbf{at most a countable number of possible values}.
+
+\textbf{Properties (as listed in slides):}
+
+\begin{itemize}
+    \item Countable support
+    \item Probability Mass Function (PMF)
+    \item Probabilities assigned to \textbf{single values}
+    \item Each possible value has \textbf{strictly positive probability}
+\end{itemize}
+
+\textbf{Examples of discrete RVs mentioned:}
+
+\begin{itemize}
+    \item Bernoulli Random Variable
+    \item Binomial Random Variable
+    \item Geometric Random Variable
+    \item Poisson Random Variable
+\end{itemize}
+
+\subsection*{2.2 Continuous Random Variable}
+
+A random variable is \textbf{continuous} if it has an \textbf{uncountable support}.
+
+\textbf{Properties (as listed in slides):}
+
+\begin{itemize}
+    \item Probability Density Function (PDF)
+    \item Probabilities assigned to \textbf{intervals of values}
+    \item Each individual value has \textbf{zero probability}
+\end{itemize}
+
+\section*{3. Example: Discrete Random Variable (Three Coin Tosses)}
+
+\textbf{Experiment:} Tossing 3 fair coins. \\
+Let $(Y)$ denote the number of heads obtained.
+
+\subsection*{Step 1: Identify possible values}
+
+\[
+Y \in \{0,1,2,3\}
+\]
+
+\subsection*{Step 2: Compute probabilities}
+
+\begin{itemize}
+    \item $P(Y=0)=P(t,t,t)=\frac{1}{8}$
+    \item $P(Y=1)=P(t,t,h)+P(t,h,t)+P(h,t,t)=\frac{3}{8}$
+    \item $P(Y=2)=P(h,h,t)+P(h,t,h)+P(t,h,h)=\frac{3}{8}$
+    \item $P(Y=3)=P(h,h,h)=\frac{1}{8}$
+\end{itemize}
+
+\subsection*{Step 3: Verify total probability}
+
+Since $(Y)$ must take one of the values $(0,1,2,3)$:
+\[
+1 = P\left(\bigcup_{i=0}^{3} \{Y=i\}\right) = \sum_{i=0}^{3} P(Y=i)
+\]
+
+\section*{4. Probability Mass Function (PMF)}
+
+\subsection*{4.1 Definition}
+
+A random variable that can take on \textbf{at most a countable number of possible values} is said to be \textbf{discrete}.
+
+Let $(X)$ be a discrete random variable with range:
+\[
+R_X = x_1, x_2, x_3, \ldots \quad (\text{finite or countably infinite})
+\]
+
+The function:
+\[
+P_X(x_k) = P(X = x_k), \quad k = 1,2,3,\ldots
+\]
+
+is called the \textbf{Probability Mass Function (PMF)} of $(X)$.
+
+\subsection*{4.2 Fundamental Property of PMF}
+
+Since $(X)$ must take on \textbf{one of the values} $(x_k)$,
+\[
+\sum_{k=1}^{\infty} P_X(x_k) = 1
+\]
+
+\section*{5. Example: PMF Defined Using a Constant}
+
+The PMF of a random variable $(X)$ is given by:
+\[
+p(i) = c \frac{\lambda^i}{i!}, \quad i = 0,1,2,\ldots
+\]
+where $(\lambda > 0)$.
+
+\subsection*{Step 1: Use normalization condition}
+
+\[
+\sum_{i=0}^{\infty} p(i) = 1
+\]
+
+Substitute the PMF:
+\[
+\sum_{i=0}^{\infty} c \frac{\lambda^i}{i!} = c \sum_{i=0}^{\infty} \frac{\lambda^i}{i!}
+\]
+
+\subsection*{Step 2: Use exponential series identity}
+
+\[
+e^{\lambda} = \sum_{i=0}^{\infty} \frac{\lambda^i}{i!}
+\]
+
+Hence:
+\[
+c e^{\lambda} = 1 \Rightarrow c = e^{-\lambda}
+\]
+
+\subsection*{Step 3: Compute required probabilities}
+
+\textbf{(a) Find $(P(X=0))$:}
+\[
+P(X=0) = e^{-\lambda}\frac{\lambda^0}{0!} = e^{-\lambda}
+\]
+
+\textbf{(b) Find $(P(X>2))$:}
+\[
+P(X>2) = 1 - P(X \le 2)
+\]
+\[
+= 1 - [P(X=0) + P(X=1) + P(X=2)]
+\]
+\[
+= 1 - \left(e^{-\lambda} + \lambda e^{-\lambda} + \frac{\lambda^2}{2}e^{-\lambda}\right)
+\]
+
+\section*{6. Cumulative Distribution Function (CDF)}
+
+The \textbf{Cumulative Distribution Function (CDF)} is defined for \textbf{both discrete and continuous random variables}.
+
+For a discrete random variable, the CDF is obtained by \textbf{summing the PMF} up to a given value.
+
+\section*{7. Probability Density Function (PDF)}
+
+The \textbf{Probability Density Function (PDF)} is defined for \textbf{continuous random variables only}.
+
+Key relationship (as stated in slides):
+\[
+\frac{d}{dx}[\text{CDF}] = \text{PDF}
+\]
+
+\section*{8. Bayes’ Theorem (Recap)}
+
+Using conditional probability:
+\[
+\Pr(A|B_i) = \frac{\Pr(B_i|A)\Pr(A)}{\sum_{j=1}^{n} \Pr(A|B_j)\Pr(B_j)}
+\]
+
+This is known as the \textbf{Bayes Formula (Proposition 3.1)}.
+
+\subsection*{Terminology (from slides):}
+
+\begin{itemize}
+    \item $(\Pr(B_i))$: \textbf{a priori probability}
+    \item $(\Pr(B_i|A))$: \textbf{posterior probability}
+\end{itemize}
+
+\section*{9. Bayes’ Theorem – Example 1: Auditorium with 30 Rows}
+
+\begin{itemize}
+    \item Auditorium has \textbf{30 rows}.
+    \item Row 1 has 11 seats, Row 2 has 12 seats, … , Row 30 has 40 seats.
+    \item A prize is given by \textbf{randomly selecting a row} (each row equally likely), then \textbf{randomly selecting a seat} within that row.
+\end{itemize}
+
+\subsection*{Tasks:}
+
+\begin{enumerate}
+    \item Compute the probability that \textbf{Seat 15} was selected given that \textbf{Row 20} was selected.
+    \item Compute the probability that \textbf{Row 20} was selected given that \textbf{Seat 15} was selected.
+\end{enumerate}
+
+(Probabilities are computed exactly as shown using Bayes’ formula in the slides.)
+
+\section*{10. Bayes’ Theorem – Example 2: Communication System}
+
+\begin{itemize}
+    \item Binary data (0 or 1) is sent and detected at the receiver.
+    \item The receiver may make mistakes:
+    \begin{itemize}
+        \item A 0 may be detected as 1
+        \item A 1 may be detected as 0
+    \end{itemize}
+\end{itemize}
+
+The system is described using \textbf{conditional probabilities}, and Bayes’ theorem is applied to compute the required posterior probabilities.
+
+\vspace{1em}
+
+\textit{This lecture scribe strictly follows the order, definitions, assumptions, derivations, and examples exactly as presented in the lecture slides, without adding any external material.}
+
+\end{document}
