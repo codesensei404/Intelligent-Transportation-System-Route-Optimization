@@ -1,0 +1,375 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+
+\begin{document}
+
+\section*{Lecture 6 Scribe – Probability \& Random Variables}
+\textit{(Exam Preparation Notes)}
+
+\hrule
+\vspace{0.5cm}
+
+\section*{1. Recap: Random Variables and Independent Events}
+
+\subsection*{Random Variables}
+
+A random variable (RV) is a numerical description of the outcome of a random experiment.
+
+\begin{itemize}
+\item Instead of studying outcomes directly, we assign numbers to them.
+\item A discrete random variable takes countable values.
+\end{itemize}
+
+If $(X)$ is a random variable, then for each value $(x)$:
+\[
+P(X=x)
+\]
+represents the probability that the random variable takes that value.
+
+This probability assignment must satisfy:
+
+\begin{enumerate}
+\item $(P(X=x) \ge 0)$
+\item $(\sum_x P(X=x) = 1)$
+\end{enumerate}
+
+These conditions ensure that the probabilities are valid and account for all possible outcomes.
+
+\hrule
+\vspace{0.5cm}
+
+\subsection*{Independent Events}
+
+Two events $(A)$ and $(B)$ are independent if:
+\[
+P(A \cap B) = P(A)P(B)
+\]
+
+\subsubsection*{Reasoning}
+
+\begin{itemize}
+\item If knowing that $(A)$ occurred does not change the probability of $(B)$, then the events are independent.
+\item The multiplication rule follows from the idea that both events occur without influencing each other.
+\end{itemize}
+
+For random variables, independence means:
+\[
+P(X=x, Y=y) = P(X=x),P(Y=y)
+\]
+
+\section*{2. Discrete Random Variable Types}
+
+\subsection*{(A) Bernoulli Random Variable}
+
+\subsubsection*{Definition}
+
+A Bernoulli RV represents one experiment with only two outcomes:
+
+\begin{itemize}
+\item Success (1)
+\item Failure (0)
+\end{itemize}
+
+Let:
+
+\begin{itemize}
+\item $(P(\text{success}) = p)$
+\item $(P(\text{failure}) = 1-p)$
+\end{itemize}
+
+\subsubsection*{Probability Distribution}
+
+\[
+P(X=1)=p,\quad P(X=0)=1-p
+\]
+
+\subsubsection*{Logical Basis}
+
+Since there are only two outcomes:
+\[
+p + (1-p) = 1
+\]
+
+This satisfies the total probability rule.
+
+\subsection*{(B) Binomial Random Variable}
+
+\subsubsection*{Definition}
+
+Counts the number of successes in $(n)$ independent Bernoulli trials.
+
+Each trial:
+
+\begin{itemize}
+\item Same success probability $(p)$
+\item Independent of others
+\end{itemize}
+
+\subsubsection*{Derivation of the Formula}
+
+We want the probability of exactly $(k)$ successes.
+
+Step 1: Select which $(k)$ trials are successes
+
+Number of ways:
+\[
+\binom{n}{k}
+\]
+
+Step 2: Probability of one specific arrangement
+
+\begin{itemize}
+\item $(k)$ successes $\rightarrow$ $(p^k)$
+\item $(n-k)$ failures $\rightarrow$ $((1-p)^{n-k})$
+\end{itemize}
+
+Step 3: Multiply by number of arrangements
+\[
+P(X=k)=\binom{n}{k} p^k (1-p)^{n-k}
+\]
+
+This accounts for all ways to obtain $(k)$ successes.
+
+\subsection*{(C) Geometric Random Variable}
+
+\subsubsection*{Definition}
+
+Represents the number of trials required until the first success occurs.
+
+\subsubsection*{Derivation}
+
+For the first success to occur on trial $(k)$:
+
+\begin{itemize}
+\item Trials 1 to $(k-1)$: all failures\\
+Probability = $((1-p)^{k-1})$
+
+\item Trial $(k)$: success\\
+Probability = $(p)$
+\end{itemize}
+
+Multiply:
+\[
+P(X=k)=(1-p)^{k-1}p
+\]
+
+\subsubsection*{Interpretation}
+
+The probability decreases as $(k)$ increases because more failures must occur before the first success.
+
+\subsection*{(D) Poisson Random Variable}
+
+\subsubsection*{Definition}
+
+Models the number of occurrences of an event in a fixed interval when:
+
+\begin{itemize}
+\item Events occur independently
+\item The average rate is constant
+\end{itemize}
+
+Let average number of events = $(\lambda)$
+
+\subsubsection*{Probability Formula}
+
+\[
+P(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}
+\]
+
+\subsubsection*{Derivation Idea}
+
+Poisson arises as a limit of the binomial distribution when:
+
+\begin{itemize}
+\item $(n)$ is large
+\item $(p)$ is small
+\item $(np = \lambda)$ remains constant
+\end{itemize}
+
+As $(n \to \infty)$, the binomial expression simplifies to the Poisson form.
+
+\section*{3. Expectation}
+
+\subsection*{Definition}
+
+The expectation (mean) of a discrete random variable is:
+\[
+E[X]=\sum x,P(X=x)
+\]
+
+\subsubsection*{Reasoning}
+
+Each value is weighted by how likely it is to occur.
+
+This gives the long-run average value.
+
+\subsection*{Expectation of a Function}
+
+If $(Y=g(X))$:
+\[
+E[g(X)] = \sum g(x),P(X=x)
+\]
+
+\subsubsection*{Logic}
+
+\begin{enumerate}
+\item Transform values using $(g(x))$
+\item Then take the weighted average.
+\end{enumerate}
+
+\subsection*{Linear Operations}
+
+\subsubsection*{Property 1}
+
+\[
+E[aX+b]=aE[X]+b
+\]
+
+\subsubsection*{Property 2}
+
+\[
+E[X+Y]=E[X]+E[Y]
+\]
+
+\subsubsection*{Reasoning}
+
+The expectation operator distributes across sums and constants because summation is linear.
+
+\section*{4. Moments}
+
+Moments describe the shape and spread of a distribution.
+
+\subsection*{nth Moment (About Origin)}
+
+\[
+E[X^n]
+\]
+
+This measures the average of the nth power of the random variable.
+
+\subsection*{Central Moments}
+
+Central moments measure variation around the mean.
+
+Let:
+\[
+\mu = E[X]
+\]
+
+The nth central moment:
+\[
+E[(X-\mu)^n]
+\]
+
+\subsubsection*{Variance (2nd Central Moment)}
+
+\[
+\text{Var}(X)=E[(X-\mu)^2]
+\]
+
+Alternative form:
+\[
+\text{Var}(X)=E[X^2]-(E[X])^2
+\]
+
+\subsubsection*{Meaning}
+
+Variance measures how spread out the values are from the mean.
+
+\subsubsection*{Skewness (3rd Central Moment)}
+
+Describes asymmetry:
+
+\begin{itemize}
+\item Positive skew $\rightarrow$ long right tail
+\item Negative skew $\rightarrow$ long left tail
+\end{itemize}
+
+\subsubsection*{Kurtosis (4th Central Moment)}
+
+Measures peakedness:
+
+\begin{itemize}
+\item High kurtosis $\rightarrow$ sharp peak
+\item Low kurtosis $\rightarrow$ flatter distribution
+\end{itemize}
+
+\section*{5. CDF and PDF}
+
+\subsection*{CDF (Cumulative Distribution Function)}
+
+Definition:
+\[
+F(x)=P(X \le x)
+\]
+
+\subsubsection*{Properties}
+
+\begin{enumerate}
+\item Non-decreasing function
+\item $(0 \le F(x) \le 1)$
+\item Approaches 1 as $(x)$ becomes large
+\end{enumerate}
+
+\subsubsection*{Interpretation}
+
+Gives total probability accumulated up to value $(x)$.
+
+\subsection*{PMF (Discrete Case)}
+
+For a discrete RV:
+\[
+P(X=x)
+\]
+
+Relation to CDF:
+\[
+F(x)=\sum_{t \le x} P(X=t)
+\]
+
+So the CDF is the cumulative sum of probabilities.
+
+\section*{6. Applications of Poisson Distribution}
+
+\subsection*{Example 1: Misprints in a Book}
+
+If:
+
+\begin{itemize}
+\item Average number of misprints per page = $(\lambda)$
+\end{itemize}
+
+Then the probability of exactly $(k)$ misprints on a page is:
+\[
+P(X=k)=\frac{e^{-\lambda}\lambda^k}{k!}
+\]
+
+\subsubsection*{Why Poisson fits}
+
+\begin{itemize}
+\item Misprints occur randomly
+\item Independent occurrences
+\item Constant average rate
+\end{itemize}
+
+\subsection*{Example 2: Phone Calls / Phone Numbers}
+
+If:
+
+\begin{itemize}
+\item Calls arrive randomly
+\item Average rate is known
+\end{itemize}
+
+Then the number of calls in a fixed time interval follows a Poisson distribution.
+
+\subsubsection*{Reasoning}
+
+\begin{itemize}
+\item Calls occur independently
+\item Rate remains constant
+\item Count of events in time interval $\rightarrow$ Poisson model
+\end{itemize}
+
+\end{document}
