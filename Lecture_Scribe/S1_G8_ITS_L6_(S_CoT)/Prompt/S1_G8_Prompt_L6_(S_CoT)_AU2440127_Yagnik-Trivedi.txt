@@ -1,0 +1,3 @@
+Generate a lecture scribe suitable for exam preparation. Read and Analyse the document throughly and While writing the scribe, reason should be 
+step by step through definitions, assumptions, proofs, and example solutions exactly as presented in the given slides. do not include anything 
+which is not present in the slides.
