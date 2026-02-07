@@ -1,0 +1,32 @@
+Prompt-1: To generate the actual Scribe
+
+Generate a descriptive lecture scribe for exam preparation using the provided context. For every topic, reason through the definitions, step by step proofs, and examples to make the logical flow explicit for a student. Do not add outside material.    
+Lecture 6 Topics:
+Recap:
+Random Variables and Independent Events.
+
+Discrete RV Types: 
+Bernoulli, Binomial, Geometric, and Poisson (with derivations).
+
+Expectation: 
+Definition, Functions of RVs, and Linear Operations.
+
+Moments:
+nth and Central Moments (Variance, Skewness, Kurtosis).
+
+CDF & PDF: 
+Definitions, properties, and examples.  
+   
+Applications: 
+Poisson examples (misprints and phone numbers).
+
+
+
+
+
+
+
+
+Prompt-2: For turning the Scribe to LaTeX
+
+Above given is the lecture scribe convert this into Latex code. The content must match the scribe provided exactly, with no additions, deletions, or edits in any text/equation.
