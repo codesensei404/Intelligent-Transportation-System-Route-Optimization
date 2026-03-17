@@ -1,0 +1,351 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+
+\title{LECTURE SCRIBE – CSE400 (Lecture 18)}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Topics}
+\begin{itemize}
+    \item Marginal PMF
+    \item Correlation
+    \item Covariance
+    \item Pearson’s Coefficient
+    \item Joint Gaussian Random Variables
+\end{itemize}
+
+\section{Marginal PMF}
+
+\subsection*{Definition}
+
+\textbf{Key Idea (from slide):} \\
+The marginal PMF of one variable is obtained by \textbf{summing the joint PMF over all possible values of the other variable}.
+
+\subsection*{Marginal PMF from Joint PMF Table}
+
+\textbf{Step-by-step reasoning:}
+
+Let joint PMF be $P(X = x, Y = y)$
+
+\subsubsection*{To find marginal of $X$:}
+
+\begin{enumerate}
+    \item Fix a value of $x$
+    \item Sum over all possible values of $y$
+\end{enumerate}
+
+\[
+P_X(x) = \sum_y P(X=x, Y=y)
+\]
+
+\subsubsection*{To find marginal of $Y$:}
+
+\begin{enumerate}
+    \item Fix a value of $y$
+    \item Sum over all possible values of $x$
+\end{enumerate}
+
+\[
+P_Y(y) = \sum_x P(X=x, Y=y)
+\]
+
+\subsection*{Example (as given in slides)}
+
+\textbf{Given:} \\
+Joint PMF
+
+\textbf{Solution steps (as shown):}
+
+\begin{enumerate}
+    \item Identify all values of joint PMF
+    \item For each $x$, sum across all $y$
+    \item For each $y$, sum across all $x$
+\end{enumerate}
+
+\textbf{Final conclusion:} \\
+Marginal PMF is obtained by \textbf{systematically summing joint probabilities along rows or columns}.
+
+\section{Correlation (Raw Correlation)}
+
+\subsection*{Definition}
+
+A basic way to measure joint behavior is through the \textbf{product moment}:
+
+\[
+R_{XY} = E[XY]
+\]
+
+\subsection*{Interpretation}
+
+\begin{itemize}
+    \item Represents the \textbf{average value of the product $(XY)$}
+    \item Called a \textbf{raw correlation measure}
+\end{itemize}
+
+\subsection*{Important Observations (from slides)}
+
+\begin{itemize}
+    \item Depends on \textbf{scale of $X$ and $Y$}
+    \item Computed \textbf{about the origin (not about means)}
+    \item Mixes:
+    \begin{itemize}
+        \item Mean values
+        \item Spread
+        \item Dependence
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Special Case}
+
+\[
+R_{XY} = 0 \Rightarrow \text{orthogonal about the origin}
+\]
+
+\subsection*{Transition Idea}
+
+To remove the effect of means:
+\begin{itemize}
+    \item \textbf{Center the variables}
+    \item Leads to \textbf{Covariance}
+\end{itemize}
+
+\section{Covariance}
+
+\subsection*{Definition}
+
+\[
+\text{Cov}(X,Y) = E[(X - E[X])(Y - E[Y])]
+\]
+
+\subsection*{Step-by-Step Interpretation}
+
+\begin{enumerate}
+    \item Subtract mean from each variable:
+    \begin{itemize}
+        \item $(X - E[X])$
+        \item $(Y - E[Y])$
+    \end{itemize}
+    \item Multiply deviations:
+    \[
+    (X - E[X])(Y - E[Y])
+    \]
+    \item Take expectation:
+    \[
+    E[(X - E[X])(Y - E[Y])]
+    \]
+\end{enumerate}
+
+\subsection*{Meaning (from slides)}
+
+\begin{itemize}
+    \item Measures how \textbf{centered quantities vary together}
+    \item Captures whether deviations occur:
+    \begin{itemize}
+        \item In same direction
+        \item In opposite direction
+    \end{itemize}
+\end{itemize}
+
+\section{Algebraic Form of Covariance}
+
+\subsection*{Start with definition:}
+
+\[
+\text{Cov}(X,Y) = E[(X - E[X])(Y - E[Y])]
+\]
+
+\subsection*{Expand step-by-step:}
+
+\[
+= E[XY - X E[Y] - Y E[X] + E[X]E[Y]]
+\]
+
+\subsection*{Apply expectation:}
+
+\[
+= E[XY] - E[X]E[Y] - E[Y]E[X] + E[X]E[Y]
+\]
+
+\subsection*{Simplify:}
+
+\[
+\boxed{\text{Cov}(X,Y) = E[XY] - E[X]E[Y]}
+\]
+
+\section{Properties of Covariance}
+
+\subsection*{1. Symmetry}
+\[
+\text{Cov}(X,Y) = \text{Cov}(Y,X)
+\]
+
+\subsection*{2. Variance as Special Case}
+\[
+\text{Var}(X) = \text{Cov}(X,X)
+\]
+
+\subsection*{3. Linearity with Respect to Constants}
+
+Covariance is linear when constants are involved.
+
+\subsection*{4. Independence Property}
+
+If $X$ and $Y$ are independent:
+\[
+\text{Cov}(X,Y) = 0
+\]
+
+\textbf{Important conclusion (from slide):}
+\begin{itemize}
+    \item Zero covariance $\Rightarrow$ \textbf{uncorrelated}
+    \item Does \textbf{not imply independence}
+\end{itemize}
+
+\section{Covariance Example 1}
+
+\textbf{Given:} \\
+Expressions for variables
+
+\textbf{Solution Steps (exact slide flow):}
+
+\begin{enumerate}
+    \item Use covariance formula:
+    \[
+    \text{Cov}(X,Y) = E[(X - E[X])(Y - E[Y])]
+    \]
+    \item Substitute given expressions into formula
+    \item Expand expression
+    \item Compute expectations
+    \item Substitute values into covariance formula
+    \item Simplify
+\end{enumerate}
+
+\textbf{Final Result:} \\
+Obtained after substituting and simplifying (as shown in slides).
+
+\section{Pearson’s Correlation Coefficient}
+
+\subsection*{Definition}
+
+\begin{itemize}
+    \item Measures \textbf{effect of change in one variable when the other changes}
+\end{itemize}
+
+\subsection*{Key Properties}
+
+\begin{itemize}
+    \item Measures:
+    \begin{itemize}
+        \item Strength
+        \item Direction of linear relationship
+    \end{itemize}
+    \item It is:
+    \begin{itemize}
+        \item \textbf{Normalized covariance}
+        \item \textbf{Unit-free}
+    \end{itemize}
+\end{itemize}
+
+\section{Covariance Example 2 (Continuous Case)}
+
+\textbf{Given:} \\
+Joint PDF $f(x,y)$
+
+\textbf{Required:} \\
+Compute required quantities (expectations, covariance)
+
+\textbf{Solution Flow (as per slides)}
+
+\begin{enumerate}
+    \item Start from joint PDF
+    \item Compute marginal densities
+    \item Compute expectations:
+    \[
+    E[X], \quad E[Y]
+    \]
+    \item Compute:
+    \[
+    E[XY] = \int \int xy f(x,y) \, dx,dy
+    \]
+    \item Substitute into:
+    \[
+    \text{Cov}(X,Y) = E[XY] - E[X]E[Y]
+    \]
+    \item Evaluate integrals step-by-step
+\end{enumerate}
+
+\textbf{Final:} \\
+Covariance obtained after full substitution and simplification (as shown across slides).
+
+\section{Joint Gaussian Random Variables}
+
+\subsection*{Definition}
+
+A pair $(X, Y)$ is \textbf{jointly Gaussian} if:
+\begin{itemize}
+    \item Joint density has \textbf{bivariate Gaussian form}
+    \item Marginals are \textbf{Gaussian}
+\end{itemize}
+
+\subsection*{Interpretation}
+
+\begin{itemize}
+    \item Used to model variables affected by many random factors
+\end{itemize}
+
+\subsection*{Real-life Example (from slide)}
+
+\begin{itemize}
+    \item $(X)$: CO$_2$ concentration
+    \item $(Y)$: Temperature
+\end{itemize}
+
+Their joint behavior can be approximated by a \textbf{joint Gaussian distribution}.
+
+\subsection*{Applications}
+
+\begin{itemize}
+    \item Signal processing
+    \item Communication systems
+    \item Noisy measurements
+\end{itemize}
+
+\subsection*{Key Idea}
+
+Joint Gaussian RVs:
+\begin{itemize}
+    \item Represent \textbf{continuous random behavior}
+    \item Capture dependence through covariance
+\end{itemize}
+
+\section*{Final Revision Flow}
+
+\begin{enumerate}
+    \item Start with \textbf{Joint PMF $\rightarrow$ Marginal PMF (summation)}
+    \item Measure joint behavior using:
+    \begin{itemize}
+        \item $E[XY]$ (raw correlation)
+    \end{itemize}
+    \item Improve measure by centering:
+    \begin{itemize}
+        \item Covariance
+    \end{itemize}
+    \item Normalize:
+    \begin{itemize}
+        \item Pearson coefficient
+    \end{itemize}
+    \item Extend to continuous case:
+    \begin{itemize}
+        \item Integrals
+    \end{itemize}
+    \item Model real systems:
+    \begin{itemize}
+        \item Joint Gaussian RVs
+    \end{itemize}
+\end{enumerate}
+
+\end{document}
