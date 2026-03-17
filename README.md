@@ -61,14 +61,16 @@ The below is the File Structure for the Github repository according to the given
 
 
 
+
+
+
+
 ```
 📦G8_S1_ITS
  ┣ 📂.dist
  ┣ 📂Base Paper
  ┃ ┗ 📄SOTA.pdf
  ┣ 📂Code
- ┃ ┣ 📂CS
- ┃ ┃ ┗ 📄index.html
  ┃ ┣ 📂Deterministic_Approach
  ┃ ┃ ┣ 📄Deterministic_Approach_Milestone_03.py
  ┃ ┃ ┣ 📄Deterministic_Approach_with_CDF_PDF_Curve.py
@@ -125,13 +127,14 @@ The below is the File Structure for the Github repository according to the given
  ┃ ┃ ┃ ┗ 📄S1_G8_L14_Scribe__S_CoT__AU2440236_Dhruvi_Chavda.pdf
  ┃ ┣ 📂S1_G8_ITS_L18_(S_CoT)
  ┃ ┃ ┣ 📂Chat_Link
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📄S1_G8_Chat_Link_L18_(S_CoT)_AU2440099_Abdulwahab_Shaikh.txt
  ┃ ┃ ┣ 📂Chat_PDF
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📄S1_G8_ChatPDF_L18_(S_CoT)_AU2440099_Abdulwahab_Shaikh.pdf
  ┃ ┃ ┣ 📂Prompt
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┗ 📄S1_G8_Prompt_L18_(S_CoT)_AU2440099_Abdulwahab_Shaikh.txt.txt
  ┃ ┃ ┗ 📂Scribe
- ┃ ┃ ┃ ┗ 📄placeholder.txt
+ ┃ ┃ ┃ ┣ 📄S1_G8_L18_Scribe_(S_CoT)_AU2440099_Abdulwahab_Shaikh.pdf
+ ┃ ┃ ┃ ┗ 📄S1_G8_L18_Scribe_(S_CoT)_AU2440099_Abdulwahab_Shaikh.tex
  ┃ ┣ 📂S1_G8_ITS_L22_(S_CoT)
  ┃ ┃ ┣ 📂Chat_Link
  ┃ ┃ ┃ ┗ 📄placeholder.txt
@@ -155,7 +158,8 @@ The below is the File Structure for the Github repository according to the given
  ┃ ┃ ┃ ┣ 📄S1_G8_Chat_Link_L6_(S_CoT)_AU2440099_Abdulwahab_Shaikh.txt
  ┃ ┃ ┃ ┣ 📄S1_G8_Chat_Link_L6_(S_CoT)_AU2440127_Yagnik-Trivedi.txt
  ┃ ┃ ┃ ┣ 📄S1_G8_ITS_L6_ChatLink_(S_CoT)_AU2440137_Vruddhi_Madam.txt
- ┃ ┃ ┃ ┗ 📄S1_G8_ITS_L6_ChatLink_(S_CoT)_AU2440236_Dhruvi_Chavda.txt
+ ┃ ┃ ┃ ┣ 📄S1_G8_ITS_L6_ChatLink_(S_CoT)_AU2440236_Dhruvi_Chavda.txt
+ ┃ ┃ ┃ ┗ 📄S1_G8_L6_Chatlink_(S_CoT)_AU2440294_Gosai_Manthangiri.txt
  ┃ ┃ ┣ 📂Chat_PDF
  ┃ ┃ ┃ ┣ 📄S1_G8_ChatPDF_L6_(S_CoT)_AU2440127_Yagnik-Trivedi.pdf
  ┃ ┃ ┃ ┣ 📄S1_G8_ITS_L6_ChatPDF_(S_CoT)_AU2440137_Vruddhi_Madam.pdf
@@ -197,12 +201,32 @@ The below is the File Structure for the Github repository according to the given
  ┃ ┃ ┗ 📄S1_G8_ITS_SOTA_M2_Video_Link_Google_Drive.txt
  ┣ 📂Project Milestone 03
  ┃ ┣ 📂Concept Map
- ┃ ┃ ┗ 📄Concept_Map_Placeholder.txt
+ ┃ ┃ ┣ 📄S1_G8_ITS_Milestone_03_Concept_Map.pdf
+ ┃ ┃ ┗ 📄S1_G8_ITS_Milestone_03_Concept_Map_Link.txt
  ┃ ┣ 📂PPT For Video
- ┃ ┃ ┗ 📄ppt_placeholder.txt
+ ┃ ┃ ┗ 📄S1_G8_ITS_SOTA_M3_PPT.pptx
  ┃ ┣ 📂Scribe
- ┃ ┃ ┗ 📄Scribe_Placeholder.txt
+ ┃ ┃ ┗ 📄S1_G8_ITS_M3_Scribe.pdf
  ┃ ┗ 📂Video Presentation
  ┃ ┃ ┗ 📄S1_G8_ITS_SOTA_M3_Video_PPT_Link.txt
+ ┣ 📂Project Milestone 04
+ ┃ ┣ 📂Concept Map
+ ┃ ┃ ┗ 📄S1_G8_ITS_Milestone_04_Concept_Map_Link.txt
+ ┃ ┣ 📂PPT For Video
+ ┃ ┃ ┗ 📄Placeholder_for_ppt.txt
+ ┃ ┣ 📂Scribe
+ ┃ ┃ ┗ 📄Placeholder_for_Scribe.txt
+ ┃ ┗ 📂Video Presentation
+ ┃ ┃ ┗ 📄S1_G8_ITS_SOTA_M4_Video_PPT_Link.txt
+ ┣ 📂Project Milestone 05
+ ┃ ┣ 📂Concept Map
+ ┃ ┃ ┗ 📄S1_G8_ITS_Milestone_05_Concept_Map_Link.txt
+ ┃ ┣ 📂PPT For Video
+ ┃ ┃ ┗ 📄Placeholder_for_ppt.txt
+ ┃ ┣ 📂Scribe
+ ┃ ┃ ┗ 📄Placeholder_for_Scribe.txt
+ ┃ ┗ 📂Video Presentation
+ ┃ ┃ ┗ 📄S1_G8_ITS_SOTA_M5_Video_PPT_Link.txt
+ ┣ 📄index.html
  ┗ 📄README.md
 ```
