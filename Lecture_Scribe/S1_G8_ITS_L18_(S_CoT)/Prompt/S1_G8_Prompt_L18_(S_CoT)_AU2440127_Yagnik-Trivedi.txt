@@ -1,0 +1,4 @@
+Generate a lecture scribe suitable for exam preparation. Read and Analyze the document thoroughly and While writing the scribe, 
+reason should be detailed and step by step through definitions, assumptions, proofs, and example solutions exactly as presented 
+in the given slides. The Scribe should not miss any important detail as well as do not include anything which is not present in 
+the slides. And also explain the logics used in solving the  given examples in this ppt.
