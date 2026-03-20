@@ -1,0 +1,208 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+
+\begin{document}
+
+\title{�� Lecture Scribe \\ Marginal PMF, Correlation, Covariance, Joint Gaussian Random Variables \\ (Based strictly on Lecture-18 slides)}
+\maketitle
+
+\section{�� 1. Marginal PMF}
+
+\subsection{✅ Definition}
+For discrete random variables $X$ and $Y$, the joint PMF is \\
+$p_{XY}(x,y)=P(X=x,Y=y)$ \\
+The marginal PMF is obtained by summing the joint PMF over all possible values of the other variable. \\
+Thus, \\
+$p_X(x)=\sum_{y} p_{XY}(x,y)$ \quad $p_Y(y)=\sum_{x} p_{XY}(x,y)$ \\
+\textbf{�� Key Idea:} \\
+Marginal PMF of one variable = sum of joint PMF across all values of the other variable. \\
+(Explained in slide definition)
+
+\subsection{✅ Marginal PMF from Joint PMF Table}
+From the joint table: \\
+Row sums $\rightarrow$ give $p_X(x)$ \\
+Column sums $\rightarrow$ give $p_Y(y)$ \\
+Mathematically, \\
+$p_X(x_i)=\sum_j p_{ij}$ \quad $p_Y(y_j)=\sum_i p_{ij}$ \\
+Also, \\
+$\sum_i p_X(x_i)=1,\quad \sum_j p_Y(y_j)=1$ \\
+(as marginal PMFs must sum to 1).
+
+\subsection{✅ Solved Example}
+Joint PMF: \\
+\begin{tabular}{c|cc}
+$p_{XY}(x,y)$ & $y=0$ & $y=1$ \\
+\hline
+$x=0$ & $1/8$ & $1/4$ \\
+$x=1$ & $3/8$ & $1/4$ \\
+\end{tabular}
+
+\textbf{Step-1: Find $p_X(x)$} \\
+$p_X(0)=\frac{1}{8}+\frac{1}{4} =\frac{1}{8}+\frac{2}{8} =\frac{3}{8}$ \quad $p_X(1)=\frac{3}{8}+\frac{1}{4} =\frac{3}{8}+\frac{2}{8} =\frac{5}{8}$
+
+\textbf{Step-2: Find $p_Y(y)$} \\
+$p_Y(0)=\frac{1}{8}+\frac{3}{8} =\frac{4}{8} =\frac{1}{2}$ \quad $p_Y(1)=\frac{1}{4}+\frac{1}{4} =\frac{1}{2}$ \\
+Thus, \\
+$p_X(x)= \begin{cases} 3/8,&x=0\\ 5/8,&x=1 \end{cases}$ \quad $p_Y(y)= \begin{cases} 1/2,&y=0\\ 1/2,&y=1 \end{cases}$ \\
+(Example derivation shown in slides)
+
+\section{�� 2. Correlation}
+
+\subsection{✅ Product Moment}
+A basic measure of joint behaviour is \\
+$R_{XY}=E[XY]$ \\
+It represents the average value of the product $XY$. \\
+\textbf{Interpretation} \\
+Depends on scale of $X$ and $Y$ \\
+Computed about origin (not about mean) \\
+Mixes: \\
+mean \\
+spread \\
+dependence \\
+If \\
+$R_{XY}=0$ \\
+$\rightarrow$ variables are orthogonal about origin \\
+To remove mean effect $\rightarrow$ center variables $\rightarrow$ covariance.
+
+\section{�� 3. Covariance}
+
+\subsection{✅ Definition}
+$\text{Cov}(X,Y)=E[(X-\mu_X)(Y-\mu_Y)]$ \\
+Where \\
+$\mu_X=E[X],\quad \mu_Y=E[Y]$ \\
+\textbf{Interpretation} \\
+Covariance measures whether deviations from mean occur: \\
+Same direction $\rightarrow$ Positive covariance \\
+Opposite direction $\rightarrow$ Negative covariance \\
+No linear relation $\rightarrow$ Zero covariance \\
+Magnitude depends on units $\rightarrow$ cannot measure strength. \\
+(Interpretation slide)
+
+\subsection{✅ Algebraic Form (Step-by-Step Derivation)}
+Start with: \\
+$\text{Cov}(X,Y)=E[(X-\mu_X)(Y-\mu_Y)]$ \\
+Expand: \\
+$=E[XY-X\mu_Y-\mu_XY+\mu_X\mu_Y]$ \\
+Apply expectation: \\
+$=E[XY]-\mu_YE[X]-\mu_XE[Y]+\mu_X\mu_Y$ \\
+Since: \\
+$E[X]=\mu_X,\quad E[Y]=\mu_Y$ \\
+Therefore: \\
+$\text{Cov}(X,Y)=E[XY]-\mu_X\mu_Y$ \\
+(Full derivation from slide)
+
+\subsection{✅ Properties}
+\textbf{Symmetry} \\
+$\text{Cov}(X,Y)=\text{Cov}(Y,X)$ \\
+\textbf{Variance special case} \\
+$\text{Cov}(X,X)=Var(X)$ \\
+\textbf{Linearity} \\
+$\text{Cov}(aX+b,cY+d)=ac\,\text{Cov}(X,Y)$ \\
+\textbf{Independence} \\
+$X\perp Y \Rightarrow \text{Cov}(X,Y)=0$ \\
+But \\
+\textbf{�� Zero covariance $\neq$ independence (general case).} \\
+(Properties slide)
+
+\subsection{✅ Solved Example-1}
+Given: \\
+$Y=-2X+3$ \\
+Find $\text{Cov}(X,Y)$ \\
+Using: \\
+$\text{Cov}(X,Y)=E[XY]-E[X]E[Y]$
+
+\textbf{Step-1: Compute $XY$} \\
+$XY=X(-2X+3)=-2X^2+3X$
+
+\textbf{Step-2: Compute $E[Y]$} \\
+$E[Y]=E[-2X+3]=-2E[X]+3$
+
+\textbf{Step-3: Substitute} \\
+$\text{Cov}(X,Y)=E[-2X^2+3X]-E[X](-2E[X]+3)$ \\
+$=-2E[X^2]+3E[X]+2(E[X])^2-3E[X]$ \\
+$=-2E[X^2]+2(E[X])^2$ \\
+Since \\
+$Var(X)=E[X^2]-(E[X])^2$ \\
+Thus, \\
+$\text{Cov}(X,Y)=-2Var(X)$ \\
+(Example slide derivation)
+
+\subsection{✅ Pearson Correlation Coefficient}
+$\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}} =\frac{Cov(X,Y)}{\sigma_X\sigma_Y}$ \\
+\textbf{Interpretation} \\
+Measures strength + direction of linear relationship \\
+Normalized covariance \\
+Unit-free \\
+\textbf{Range:} \\
+$-1\le \rho_{XY}\le 1$ \\
+$>0 \rightarrow$ positive trend \\
+$<0 \rightarrow$ negative trend \\
+$=0 \rightarrow$ no linear correlation \\
+(Slides explanation)
+
+\subsection{✅ Solved Example-2 (Continuous Case)}
+Joint PDF: \\
+$f_{XY}(x,y)=\frac{xy}{96},\quad 0<x<4,\ 1<y<5$
+
+\textbf{Step-1: Compute $E[X]$} \\
+$E[X]=\int_0^4 x f_X(x)dx =\frac{1}{8}\int_0^4 x^2dx$ \\
+$=\frac{1}{8}\left[\frac{x^3}{3}\right]_0^4 =\frac{1}{8}\cdot\frac{64}{3} =\frac{8}{3}$
+
+\textbf{Step-2: Compute $E[Y]$} \\
+$E[Y]=\int_1^5 y f_Y(y)dy =\frac{1}{12}\int_1^5 y^2dy$ \\
+$=\frac{1}{12}\left[\frac{y^3}{3}\right]_1^5 =\frac{31}{9}$
+
+\textbf{Step-3: Compute $E[XY]$} \\
+Since $X,Y$ independent: \\
+$E[XY]=E[X]E[Y] =\frac{8}{3}\cdot\frac{31}{9} =\frac{248}{27}$
+
+\textbf{Step-4: Linear Expectation} \\
+$E[2X+3Y]=2E[X]+3E[Y] =\frac{16}{3}+\frac{31}{3} =\frac{47}{3}$
+
+\textbf{Step-5: Variance of $X$} \\
+$E[X^2]=\frac{1}{8}\int_0^4 x^3dx=8$ \\
+$Var(X)=8-\left(\frac{8}{3}\right)^2 =\frac{8}{9}$
+
+\textbf{Step-6: Variance of $Y$} \\
+$E[Y^2]=13$ \\
+$Var(Y)=13-\left(\frac{31}{9}\right)^2 =\frac{92}{81}$
+
+\textbf{Step-7: Covariance} \\
+$\text{Cov}(X,Y)=E[XY]-E[X]E[Y] =\frac{248}{27}-\frac{248}{27}=0$
+
+\textbf{Step-8: Correlation} \\
+$\rho_{XY}=\frac{0}{\sqrt{Var(X)Var(Y)}}=0$ \\
+(All steps from solution slides)
+
+\section{�� 4. Joint Gaussian Random Variables}
+
+\subsection{✅ Definition}
+A pair $(X,Y)$ is jointly Gaussian if: \\
+Joint density has bivariate Gaussian form \\
+Marginals are Gaussian \\
+\textbf{Applications:} \\
+Signal processing \\
+Communication systems \\
+Noisy measurements modelling \\
+(Definition slide)
+
+\subsection{✅ Algebraic Form}
+$f_{XY}(x,y)= \frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}} \exp\left( -\frac{1}{2(1-\rho^2)} \left[ \left(\frac{x-\mu_X}{\sigma_X}\right)^2 +\left(\frac{y-\mu_Y}{\sigma_Y}\right)^2 -2\rho\left(\frac{x-\mu_X}{\sigma_X}\right) \left(\frac{y-\mu_Y}{\sigma_Y}\right) \right] \right)$ \\
+Where: \\
+$\mu_X,\mu_Y \rightarrow$ means \\
+$\sigma_X,\sigma_Y \rightarrow$ standard deviations \\
+$\rho \rightarrow$ correlation parameter
+
+\subsection{✅ Interpretation Example}
+Example given: \\
+$X$: CO₂ concentration \\
+$Y$: Global temperature anomaly \\
+If: \\
+$\rho>0$ \\
+$\rightarrow$ High CO₂ tends to occur with higher temperature. \\
+(Interpretation slide)
+
+\end{document}
