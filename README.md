@@ -11,7 +11,6 @@ The Submission Components:
 2) Video Preparation - Dhruvi Chavda and Yagnik Trivedi
 3) Scribe Preparation - Manthangiri Gosai and Vruddhi Madam
 
-
 ********************************************************************
 ********************************************************************
 ********************************************************************
@@ -44,8 +43,6 @@ The Submission Components:
 2) Video Preparation - Abdulwahab Shaikh and Vruddhi Madam
 3) Scribe Preparation - Dhruvi Chavda and Yagnik Trivedi
 
-The below is the File Structure for the Github repository according to the given instructions.
-
 ********************************************************************
 ********************************************************************
 ********************************************************************
@@ -70,15 +67,22 @@ Milestone-04: Due Date 29-March-2026 The Submission Components:
 ********************************************************************
 ********************************************************************
 
+Milestone-05: Due Date -April-2026 The Submission Components:
 
+1) Concept Map and GitHub Initialization - Yagnik Trivedi
+2) Video Preparation - Manthangiri Gosai and Vrudhi Madam
+3) Scribe Preparation - Abdulwahab Shaikh and Dhruvi Chavda
+   
 The below is the File Structure for the Github repository according to the given instructions.
 
-
-
-
-
-
-
+********************************************************************
+********************************************************************
+********************************************************************
+********************************************************************
+********************************************************************
+********************************************************************
+********************************************************************
+********************************************************************
 
 ```
 📦G8_S1_ITS
