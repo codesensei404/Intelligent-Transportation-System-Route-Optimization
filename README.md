@@ -57,9 +57,18 @@ The below is the File Structure for the Github repository according to the given
 
 Milestone-04: Due Date 29-March-2026 The Submission Components:
 
-Concept Map and GitHub Initialization - Dhruvi Chavda
-Video Preparation - Manthangiri Gosai and Yagnik Trivedi
-Scribe Preparation - Abdulwahab Shaikh and Vrudhi Madam
+1) Concept Map and GitHub Initialization - Dhruvi Chavda
+2) Video Preparation - Manthangiri Gosai and Yagnik Trivedi
+3) Scribe Preparation - Abdulwahab Shaikh and Vrudhi Madam
+
+********************************************************************
+********************************************************************
+********************************************************************
+********************************************************************
+********************************************************************
+********************************************************************
+********************************************************************
+********************************************************************
 
 
 The below is the File Structure for the Github repository according to the given instructions.
