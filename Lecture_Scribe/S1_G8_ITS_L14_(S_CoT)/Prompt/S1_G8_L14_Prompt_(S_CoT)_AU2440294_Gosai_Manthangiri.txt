@@ -1,0 +1,28 @@
+Prompt 1: Role: Act as an expert academic scribe.
+Task: Generate a comprehensive lecture scribe suitable for exam preparation based strictly on the provided context.
+Requirements:
+	Step-by-Step Reasoning: While writing the scribe, reason step-by-step through every definition, assumption, proof, and example solution exactly as presented in the provided context.
+	Explicit Derivations: You must provide the full, step-by-step derivation for every mathematical problem and example. Do not skip intermediate algebraic or logical steps.Logical 
+	Transparency: Make the logical flow explicit and easy to track so that a student can follow the exact reasoning during revision.
+	Strict Context Fidelity: Do not introduce any material, external concepts, or alternative derivations that are not explicitly present in the provided context.
+
+Topics to Cover:
+	(1) Previous Lecture Recap: Random Variables (RVs)
+	(2) Independent Events: Definition and Example
+	(3) Types of Discrete Random Variables: Bernoulli, Binomial, Geometric, and Poisson RVs.
+	(4) Expectation of RVs: Definition, Examples, Expectation of a Function of RV, Linear Operations, and $n^{th}$ Moments (Variance, Skewness, Kurtosis).
+	(5) The Cumulative Density Function (CDF): Definition, Properties, and Examples.
+	(6) The Probability Density Function (PDF): Definition, Properties, and Examples.
+
+
+
+
+Prompt 2: Convert the generated Lecture Scribe into a clean LaTeX document.
+
+Constraints:
+
+Zero Modification: Maintain the exact wording, equation structures, and phrasing from the Scribe. Do not optimize, rewrite, or correct the text during the conversion.
+
+No External Content: Do not insert any packages, definitions, or conceptual explanations that were not present in the source text.
+
+Technical Accuracy: Ensure all mathematical notation is wrapped in appropriate LaTeX environments (e.g., equation, align, or $inline$).
