@@ -1,0 +1,261 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\begin{document}
+
+\title{Lecture Scribe \\ RANDOM VARIABLES, DISTRIBUTIONS \& EXPECTATION}
+\maketitle
+
+\section{(1) Previous Lecture Recap: Random Variables (RVs)}
+
+\subsection{1.1 Definition of a Random Variable}
+Let: \\
+SSS = Sample Space of a random experiment \\
+$\omega\in S$ = an outcome \\
+A Random Variable (RV) is defined as a function: \\
+$X:S\rightarrow \mathbb{R}$ \\
+This means: \\
+For every outcome $\omega\in S$, the function assigns a real number. \\
+So, \\
+$X(\omega)=$ real number \\
+Thus, a random variable converts outcomes of an experiment into numerical values.
+
+\subsection{1.2 Types of Random Variables}
+
+\subsubsection{(A) Discrete Random Variable}
+A random variable that takes countable values. \\
+Representation: \\
+$X=x_1,x_2,x_3,\dots$
+
+\subsubsection{(B) Continuous Random Variable}
+A random variable that takes values over a continuous interval. \\
+Representation: \\
+$a\le X\le b$
+
+\subsection{1.3 Probability Mass Function (PMF)}
+If $X$ is discrete: \\
+$P(X=x_i)=p_i$ \\
+Properties \\
+$0\le p_i\le 1$ \\
+$\sum p_i=1$ \\
+These conditions ensure that probabilities are valid and total probability equals 1.
+
+\section{(2) Independent Events}
+
+\subsection{2.1 Definition}
+Two events $A$ and $B$ are independent if: \\
+$P(A \cap B) = P(A)P(B)$ \\
+Logical meaning: \\
+The occurrence of one event does not change the probability of the other event.
+
+\subsection{2.2 Example: Two Coin Tosses}
+Step 1: Write Sample Space \\
+$S=\{HH, HT, TH, TT\}$ \\
+Total outcomes = 4.
+
+Step 2: Define Events \\
+Let: \\
+$A=$ First toss is Head \\
+Outcomes satisfying $A$: \\
+$\{HH, HT\}$ \\
+Thus, \\
+$P(A) = \frac{2}{4} = \frac{1}{2}$
+
+Let: \\
+$B=$ Second toss is Head \\
+Outcomes satisfying $B$: \\
+$\{HH, TH\}$ \\
+Thus, \\
+$P(B) = \frac{2}{4} = \frac{1}{2}$
+
+Step 3: Find Intersection \\
+$A \cap B = \{HH\}$ \\
+Thus, \\
+$P(A \cap B) = \frac{1}{4}$
+
+Step 4: Verify Independence Condition \\
+$P(A)P(B) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$ \\
+Since: \\
+$P(A \cap B) = P(A)P(B)$ \\
+Therefore, $A$ and $B$ are independent.
+
+\section{(3) Types of Discrete Random Variables}
+
+\subsection{3.1 Bernoulli Random Variable}
+
+\subsubsection{Definition}
+A random variable with two possible outcomes: \\
+$X = \begin{cases} 1 & \text{with probability } p \\ 0 & \text{with probability } 1-p \end{cases}$
+
+\subsubsection{PMF}
+$P(X=x) = p^x (1-p)^{1-x}$ \\
+where $x=0,1$
+
+\subsubsection{Expectation (Step-by-Step)}
+By definition: \\
+$E[X] = \sum xP(X=x)$ \\
+Substitute possible values: \\
+$E[X] = 1 \cdot p + 0 \cdot (1-p)$ \\
+Compute terms: \\
+$1 \cdot p = p$ \quad $0 \cdot (1-p) = 0$ \\
+Add: \\
+$E[X] = p + 0 = p$
+
+\subsection{3.2 Binomial Random Variable}
+
+\subsubsection{Definition}
+If: \\
+$n$ independent trials \\
+Each trial has probability of success $p$ \\
+Then: \\
+$X=$ Number of successes
+
+\subsubsection{PMF}
+$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$
+
+\subsubsection{Expectation (Step-by-Step Logical Derivation)}
+Let: \\
+$X = X_1 + X_2 + \dots + X_n$ \\
+Each $X_i$ is Bernoulli. \\
+We know: \\
+$E[X_i] = p$ \\
+Now apply linearity: \\
+$E[X] = E[X_1 + X_2 + \dots + X_n] = E[X_1] + E[X_2] + \dots + E[X_n]$ \\
+Substitute: \\
+$= p + p + \dots + p$ \\
+Since there are $n$ terms: \\
+$E[X] = np$
+
+\subsection{3.3 Geometric Random Variable}
+
+\subsubsection{Definition}
+Number of trials required to get the first success.
+
+\subsubsection{PMF}
+$P(X=k) = (1-p)^{k-1}p$
+
+\subsubsection{Expectation (Step-by-Step Derivation)}
+$E[X] = \sum_{k=1}^{\infty} k(1-p)^{k-1}p$ \\
+Factor $p$: \\
+$= p \sum_{k=1}^{\infty} k(1-p)^{k-1}$ \\
+Let: \\
+$r = 1-p$ \\
+We use the known series result: \\
+$\sum_{k=1}^{\infty} kr^{k-1} = \frac{1}{(1-r)^2}$ \\
+Substitute: \\
+$1-r = p$ \\
+Thus: \\
+$\sum k(1-p)^{k-1} = \frac{1}{p^2}$ \\
+Therefore: \\
+$E[X] = p \cdot \frac{1}{p^2} = \frac{1}{p}$
+
+\subsection{3.4 Poisson Random Variable}
+
+\subsubsection{Definition}
+Used when events occur independently in fixed interval. \\
+Parameter: \\
+$\lambda > 0$
+
+\subsubsection{PMF}
+$P(X=k) = \frac{e^{-\lambda}\lambda^k}{k!}$
+
+\subsubsection{Expectation (Step-by-Step)}
+$E[X] = \sum_{k=0}^{\infty} k\frac{e^{-\lambda}\lambda^k}{k!}$ \\
+Rewrite: \\
+$\frac{k}{k!} = \frac{1}{(k-1)!}$ \\
+Thus: \\
+$E[X] = \lambda e^{-\lambda} \sum_{k=1}^{\infty} \frac{\lambda^{k-1}}{(k-1)!}$ \\
+Let $m = k-1$: \\
+$= \lambda e^{-\lambda} \sum_{m=0}^{\infty} \frac{\lambda^m}{m!}$ \\
+Recognize exponential expansion: \\
+$\sum_{m=0}^{\infty} \frac{\lambda^m}{m!} = e^\lambda$ \\
+Thus: \\
+$E[X] = \lambda e^{-\lambda} e^\lambda = \lambda$
+
+\section{(4) Expectation of Random Variables}
+
+\subsection{4.1 Definition}
+$E[X] = \sum xP(X=x)$
+
+\subsection{4.2 Expectation of Function}
+$E[g(X)] = \sum g(x)P(X=x)$
+
+\subsubsection{Example}
+Given: \\
+$P(X=1)=0.5, P(X=2)=0.5$ \\
+Find: \\
+$E[X^2] = 1^2(0.5) + 2^2(0.5) = 1(0.5) + 4(0.5) = 0.5 + 2 = 2.5$
+
+\subsection{4.3 Linearity of Expectation}
+$E[aX+b] = \sum (ax+b)P(X=x) = a\sum xP(X=x) + b\sum P(X=x) = aE[X] + b(1) = aE[X]+b$
+
+\subsection{4.4 Variance Derivation}
+$\text{Var}(X) = E[(X-\mu)^2]$ \\
+Expand: \\
+$(X-\mu)^2 = X^2 - 2\mu X + \mu^2$ \\
+Take expectation: \\
+$E[X^2] - 2\mu E[X] + \mu^2$ \\
+Since $E[X]=\mu$: \\
+$= E[X^2] - 2\mu^2 + \mu^2 = E[X^2] - \mu^2$ \\
+Thus: \\
+$\text{Var}(X) = E[X^2]-(E[X])^2$
+
+\subsection{4.5 nᵗʰ Moments}
+$\mu_n = E[X^n]$ \\
+Special cases: \\
+2nd central moment $\rightarrow$ Variance \\
+3rd $\rightarrow$ Skewness \\
+4th $\rightarrow$ Kurtosis
+
+\section{(5) Cumulative Distribution Function (CDF)}
+
+\subsection{Definition}
+$F(x)=P(X\le x)$
+
+\subsection{Properties}
+$0\le F(x)\le 1$ \\
+Non-decreasing \\
+Right continuous \\
+$\lim_{x\to-\infty}F(x)=0$ \\
+$\lim_{x\to\infty}F(x)=1$
+
+\subsection{Example}
+Given: \\
+$P(X=1)=0.4, P(X=2)=0.6$ \\
+Then: \\
+For $x<1$: \\
+$F(x)=0$ \\
+For $1\le x<2$: \\
+$F(x)=0.4$ \\
+For $x\ge 2$: \\
+$F(x)=1$
+
+\section{(6) Probability Density Function (PDF)}
+
+\subsection{Definition}
+$f(x)\ge 0$ \quad $\int_{-\infty}^{\infty} f(x)dx=1$
+
+\subsection{Probability Between Two Points}
+$P(a\le X\le b)=\int_a^b f(x)dx$
+
+\subsection{Relation Between CDF and PDF}
+$F(x)=\int_{-\infty}^x f(t)dt$ \\
+Differentiate: \\
+$f(x)=\frac{d}{dx}F(x)$
+
+\section{FINAL REVISION SUMMARY}
+\begin{itemize}
+\item RV = Function from sample space to real numbers
+\item Independence = $P(A\cap B)=P(A)P(B)$
+\item Bernoulli $\rightarrow$ $E[X]=p$
+\item Binomial $\rightarrow$ $E[X]=np$
+\item Geometric $\rightarrow$ $E[X]=1/p$
+\item Poisson $\rightarrow$ $E[X]=\lambda$
+\item Variance $\rightarrow$ $E[X^2]-(E[X])^2$
+\item CDF $\rightarrow$ $F(x)=P(X\le x)$
+\item PDF integrates to 1
+\end{itemize}
+
+\end{document}
