@@ -1,0 +1,8 @@
+Prompt-1: To generate the actual scribe
+
+Generate a lecture scribe for exam preparation based on provided pdf. Write the scribe by reason step by step through definations, notation, proofs and example solutions exactly given in the provided context. Give step-by-step derivations for problems and examples solution. Write scribe with a clear logical flow so that student can understand easily. Do not include any points or derivations which is not present in the context.
+
+
+Prompt-2: to generate LaTeX code
+
+generate a LaTeX code based on the given lecture scribe. Do not change any word or equation formation. Keep the content exactly same as the original scribe. Do not add or remove any information.
