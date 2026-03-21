@@ -1,0 +1,286 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage[a4paper, margin=1in]{geometry}
+
+\begin{document}
+
+\section*{�� Lecture 18 Scribe}
+
+\textbf{Marginal PMF, Correlation, Covariance, Joint Gaussian RVs}
+
+\section*{1. Marginal PMF}
+
+\textbf{Definition}
+
+The key idea:
+
+The marginal PMF of one variable is obtained by summing the joint PMF over all possible values of the other variable.
+
+\textbf{Notation}
+
+If joint PMF is $p_{X,Y}(x,y)$, then:
+
+Marginal PMF of $X$:
+\[
+p_X(x) = \sum_{y} p_{X,Y}(x,y)
+\]
+
+Marginal PMF of $Y$:
+\[
+p_Y(y) = \sum_{x} p_{X,Y}(x,y)
+\]
+
+\textbf{Marginal PMF from Joint PMF Table}
+
+Step-by-step procedure:
+
+Start with the joint PMF table
+
+To find $p_X(x)$:
+\begin{itemize}
+\item Fix $x$
+\item Sum across all $y$
+\end{itemize}
+
+To find $p_Y(y)$:
+\begin{itemize}
+\item Fix $y$
+\item Sum across all $x$
+\end{itemize}
+
+\textbf{Example (as per slides)}
+
+Given: Joint PMF
+
+Solution Steps:
+
+Apply definition:
+
+\[
+p_X(x) = \sum_{y} p_{X,Y}(x,y)
+\]
+
+Similarly:
+
+\[
+p_Y(y) = \sum_{x} p_{X,Y}(x,y)
+\]
+
+Compute values by summing corresponding rows/columns
+
+\textbf{Conclusion:}
+
+Marginal PMFs are obtained directly by summation over the joint PMF.
+
+\section*{2. Correlation}
+
+\textbf{Definition}
+
+A basic way to measure joint behavior:
+
+\[
+R_{XY} = E[XY]
+\]
+
+\textbf{Interpretation}
+
+It gives the average value of product $XY$
+
+Called a raw correlation measure
+
+\textbf{Important Observations}
+
+Depends on scale of X and Y
+
+Computed about the origin (not mean)
+
+Mixes:
+\begin{itemize}
+\item Mean values
+\item Spread
+\item Dependence
+\end{itemize}
+
+�� Therefore:
+
+Not a clean measure of dependence
+
+\textbf{Special Case}
+
+\[
+R_{XY} = 0 \Rightarrow \text{orthogonal about origin}
+\]
+
+\textbf{Transition to Covariance}
+
+To remove mean effects:
+
+We center variables $\rightarrow$ leads to covariance
+
+\section*{3. Covariance}
+
+\textbf{Definition}
+
+\[
+\text{Cov}(X,Y) = E[(X - E[X])(Y - E[Y])]
+\]
+
+\textbf{Step-by-Step Interpretation}
+
+Subtract mean from each variable
+
+Measure how deviations vary together
+
+Meaning:
+
+Positive $\rightarrow$ move in same direction
+
+Negative $\rightarrow$ move in opposite direction
+
+\section*{4. Covariance: Algebraic Form}
+
+Start with:
+
+\[
+\text{Cov}(X,Y) = E[(X - E[X])(Y - E[Y])]
+\]
+
+Expand:
+
+\[
+= E[XY - X E[Y] - Y E[X] + E[X]E[Y]]
+\]
+
+Apply linearity of expectation:
+
+\[
+= E[XY] - E[X]E[Y] - E[Y]E[X] + E[X]E[Y]
+\]
+
+Simplify:
+
+\[
+\text{Cov}(X,Y) = E[XY] - E[X]E[Y]
+\]
+
+\section*{5. Properties of Covariance}
+
+\textbf{1. Symmetry}
+
+\[
+\text{Cov}(X,Y) = \text{Cov}(Y,X)
+\]
+
+\textbf{2. Variance as Special Case}
+
+\[
+\text{Var}(X) = \text{Cov}(X,X)
+\]
+
+\textbf{3. Linearity with Constants}
+
+(Covariance behaves linearly when constants are involved)
+
+\textbf{4. Independence Property}
+
+\[
+X \perp Y \Rightarrow \text{Cov}(X,Y) = 0
+\]
+
+⚠️ Important:
+
+Zero covariance $\Rightarrow$ uncorrelated
+
+But NOT necessarily independent
+
+\section*{6. Covariance Example 1}
+
+\textbf{Method (as given)}
+
+Use formula:
+
+\[
+\text{Cov}(X,Y) = E[XY] - E[X]E[Y]
+\]
+
+Substitute:
+
+\[
+E[XY]
+\]
+
+\[
+E[X]
+\]
+
+\[
+E[Y]
+\]
+
+Simplify step-by-step
+
+Final result obtained after substitution
+
+\section*{7. Pearson’s Correlation Coefficient}
+
+\textbf{Definition}
+
+Measures effect of change in one variable when the other changes
+
+\textbf{Key Points}
+
+Measures strength and direction of linear relationship
+
+Normalized version of covariance
+
+Unit-free
+
+\section*{8. Covariance Example 2 (Continuous Case)}
+
+\textbf{Given:}
+
+Joint PDF $f_{X,Y}(x,y)$
+
+\textbf{Steps:}
+
+Compute:
+
+\[
+E[X], E[Y], E[XY]
+\]
+
+Use:
+
+\[
+\text{Cov}(X,Y) = E[XY] - E[X]E[Y]
+\]
+
+Perform integration over valid region
+
+Substitute results
+
+Final covariance obtained
+
+\section*{9. Jointly Gaussian Random Variables}
+
+\textbf{Definition}
+
+A pair $(X,Y)$ is jointly Gaussian if:
+
+Joint density has bivariate Gaussian form
+
+Marginals are also Gaussian
+
+\textbf{Interpretation}
+
+Models continuous random variables influenced by many small effects
+
+\textbf{Real-Life Applications}
+
+Signal processing
+
+Communication systems
+
+Noisy measurements
+
+\end{document}
