@@ -1,0 +1,444 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, booktabs}
+
+\title{CSE400 -- Fundamentals of Probability in Computing}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Lecture 18: Marginal PMF, Correlation, Covariance, Joint Gaussian Random Variables}
+
+\hrule
+\vspace{0.5cm}
+
+\section{Marginal PMF}
+
+\subsection{Definition}
+
+For discrete random variables $X$ and $Y$, the joint PMF is:
+
+\[
+p_{XY}(x,y) = P(X = x, Y = y)
+\]
+
+The marginal PMFs are obtained by summing over the other variable:
+
+\begin{align*}
+p_X(x) &= \sum_y p_{XY}(x,y) \\
+p_Y(y) &= \sum_x p_{XY}(x,y)
+\end{align*}
+
+\subsubsection*{Key Idea}
+
+The marginal PMF of one variable is obtained by summing the joint PMF over all possible values of the other variable.
+
+\hrule
+\vspace{0.5cm}
+
+\subsection{Marginal PMF from Joint PMF Table}
+
+\begin{itemize}
+\item Row sums give $p_X(x)$
+\item Column sums give $p_Y(y)$
+\end{itemize}
+
+Mathematically:
+
+\begin{align*}
+p_X(x_i) &= \sum_j p_{ij} \\
+p_Y(y_j) &= \sum_i p_{ij}
+\end{align*}
+
+Normalization:
+
+\begin{align*}
+\sum_i p_X(x_i) &= 1 \\
+\sum_j p_Y(y_j) &= 1
+\end{align*}
+
+\hrule
+\vspace{0.5cm}
+
+\subsection{Example}
+
+Given joint PMF:
+
+\[
+\begin{array}{c|cc}
+ & y=0 & y=1 \\
+\hline
+x=0 & \frac{1}{8} & \frac{1}{4} \\
+x=1 & \frac{3}{8} & \frac{1}{4}
+\end{array}
+\]
+
+\subsubsection*{Step-by-step Solution with Logic}
+
+\textbf{Step 1: Identify rows and columns}
+
+\begin{itemize}
+\item Rows correspond to fixed $x$ values
+\item Columns correspond to fixed $y$ values
+\end{itemize}
+
+\textbf{Step 2: Compute $p_X(x)$ (row-wise sum)}
+
+\begin{align*}
+p_X(0) &= \frac{1}{8} + \frac{1}{4} \\
+       &= \frac{1}{8} + \frac{2}{8} \\
+       &= \frac{3}{8}
+\end{align*}
+
+\begin{align*}
+p_X(1) &= \frac{3}{8} + \frac{1}{4} \\
+       &= \frac{3}{8} + \frac{2}{8} \\
+       &= \frac{5}{8}
+\end{align*}
+
+Logic: We sum across columns because we eliminate $Y$ to get marginal of $X$.
+
+\textbf{Step 3: Compute $p_Y(y)$ (column-wise sum)}
+
+\begin{align*}
+p_Y(0) &= \frac{1}{8} + \frac{3}{8} = \frac{4}{8} = \frac{1}{2} \\
+p_Y(1) &= \frac{1}{4} + \frac{1}{4} = \frac{1}{2}
+\end{align*}
+
+Logic: We sum across rows because we eliminate $X$ to get marginal of $Y$.
+
+\textbf{Step 4: Verification}
+
+\begin{align*}
+p_X(0) + p_X(1) &= \frac{3}{8} + \frac{5}{8} = 1 \\
+p_Y(0) + p_Y(1) &= \frac{1}{2} + \frac{1}{2} = 1
+\end{align*}
+
+\hrule
+\vspace{0.5cm}
+
+\section{Correlation}
+
+\subsection{Definition}
+
+\[
+R_{XY} = E[XY]
+\]
+
+\subsection{Interpretation}
+
+\begin{itemize}
+\item Measures average value of product $XY$
+\item Computed about origin (not centered)
+\end{itemize}
+
+\subsubsection*{Important Observations}
+
+$R_{XY}$ depends on:
+
+\begin{itemize}
+\item Mean values
+\item Spread of variables
+\item Dependence between variables
+\end{itemize}
+
+If $R_{XY} = 0$ $\Rightarrow$ Variables are orthogonal about origin
+
+Limitation: This is not a clean measure of dependence because it mixes mean, spread, and dependence.
+
+\hrule
+\vspace{0.5cm}
+
+\section{Covariance}
+
+\subsection{Definition}
+
+\[
+\mathrm{Cov}(X,Y) = E[(X - \mu_X)(Y - \mu_Y)]
+\]
+
+Where:
+
+\[
+\mu_X = E[X], \quad \mu_Y = E[Y]
+\]
+
+\subsection{Interpretation}
+
+Covariance measures how deviations from means vary together.
+
+\begin{itemize}
+\item $\mathrm{Cov}(X,Y) > 0$ $\rightarrow$ positive covariance (same direction)
+\item $\mathrm{Cov}(X,Y) < 0$ $\rightarrow$ negative covariance (opposite direction)
+\item $\mathrm{Cov}(X,Y) = 0$ $\rightarrow$ no linear co-variation
+\end{itemize}
+
+Important: Magnitude depends on units $\rightarrow$ cannot measure strength.
+
+\subsection{Algebraic Form (Detailed Derivation)}
+
+Start with definition:
+
+\[
+\mathrm{Cov}(X,Y) = E[(X - \mu_X)(Y - \mu_Y)]
+\]
+
+Step 1: Expand product
+
+\[
+= E[XY - X\mu_Y - Y\mu_X + \mu_X\mu_Y]
+\]
+
+Step 2: Apply expectation (linearity)
+
+\[
+= E[XY] - \mu_YE[X] - \mu_XE[Y] + \mu_X\mu_Y
+\]
+
+Step 3: Substitute means
+
+\[
+= E[XY] - \mu_Y\mu_X - \mu_X\mu_Y + \mu_X\mu_Y
+\]
+
+Simplify:
+
+\[
+\mathrm{Cov}(X,Y) = E[XY] - E[X]E[Y]
+\]
+
+\subsection{Properties}
+
+\begin{enumerate}
+\item Symmetry \\
+$\mathrm{Cov}(X,Y) = \mathrm{Cov}(Y,X)$
+
+\item Variance \\
+$\mathrm{Cov}(X,X) = \mathrm{Var}(X)$
+
+\item Linearity \\
+$\mathrm{Cov}(aX + b, cY + d) = ac \, \mathrm{Cov}(X,Y)$
+
+\item Independence \\
+If $X \perp Y \Rightarrow \mathrm{Cov}(X,Y) = 0$
+\end{enumerate}
+
+Note: Zero covariance does not imply independence.
+
+\hrule
+\vspace{0.5cm}
+
+\subsection{Example 1}
+
+Given: $Y = -2X + 3$
+
+Find $\mathrm{Cov}(X,Y)$
+
+\subsubsection*{Step-by-step Solution with Logic}
+
+\textbf{Step 1:} Use covariance formula
+
+\[
+\mathrm{Cov}(X,Y) = E[XY] - E[X]E[Y]
+\]
+
+\textbf{Step 2:} Express $XY$ in terms of $X$
+
+\[
+XY = X(-2X + 3) = -2X^2 + 3X
+\]
+
+Logic: Convert everything into $X$ so expectations can be computed.
+
+\textbf{Step 3:} Compute $E[XY]$
+
+\[
+E[XY] = -2E[X^2] + 3E[X]
+\]
+
+\textbf{Step 4:} Compute $E[Y]$
+
+\[
+E[Y] = -2E[X] + 3
+\]
+
+\textbf{Step 5:} Substitute
+
+\[
+\mathrm{Cov}(X,Y) = (-2E[X^2] + 3E[X]) - E[X](-2E[X] + 3)
+\]
+
+\textbf{Step 6:} Expand
+
+\[
+= -2E[X^2] + 3E[X] + 2(E[X])^2 - 3E[X]
+\]
+
+\[
+= -2E[X^2] + 2(E[X])^2
+\]
+
+\textbf{Step 7:} Use variance identity
+
+\[
+\mathrm{Var}(X) = E[X^2] - (E[X])^2
+\]
+
+Thus:
+
+\[
+\mathrm{Cov}(X,Y) = -2 \, \mathrm{Var}(X)
+\]
+
+\hrule
+\vspace{0.5cm}
+
+\section{Pearson’s Correlation Coefficient}
+
+\subsection{Definition}
+
+\[
+\rho_{XY} = \frac{\mathrm{Cov}(X,Y)}{\sigma_X \sigma_Y}
+\]
+
+Where:
+
+\[
+\sigma_X = \sqrt{\mathrm{Var}(X)}, \quad \sigma_Y = \sqrt{\mathrm{Var}(Y)}
+\]
+
+\subsection{Properties}
+
+\begin{itemize}
+\item Measures direction and strength of linear relationship
+\item Normalized covariance
+\item Unit-free
+\end{itemize}
+
+Range:
+
+\[
+-1 \leq \rho \leq 1
+\]
+
+Interpretation:
+
+\begin{itemize}
+\item $\rho > 0$ $\rightarrow$ positive linear trend
+\item $\rho < 0$ $\rightarrow$ negative linear trend
+\item $\rho = 0$ $\rightarrow$ no linear correlation
+\end{itemize}
+
+\hrule
+\vspace{0.5cm}
+
+\section{Example 2}
+
+Given:
+
+\[
+f_{XY}(x,y) = \frac{xy}{96}, \quad 0 < x < 4, \; 1 < y < 5
+\]
+
+\textbf{Step 1: Compute $E[X]$}
+
+\[
+E[X] = \frac{1}{8} \int_0^4 x^2 dx = \frac{8}{3}
+\]
+
+\textbf{Step 2: Compute $E[Y]$}
+
+\[
+E[Y] = \frac{1}{12} \int_1^5 y^2 dy = \frac{31}{9}
+\]
+
+\textbf{Step 3: Compute $E[XY]$}
+
+\[
+E[XY] = E[X]E[Y] = \frac{248}{27}
+\]
+
+\textbf{Step 4: Compute $E[2X + 3Y]$}
+
+\[
+E[2X + 3Y] = \frac{47}{3}
+\]
+
+\textbf{Step 5: Compute Var(X)}
+
+\[
+\mathrm{Var}(X) = \frac{8}{9}
+\]
+
+\textbf{Step 6: Compute Var(Y)}
+
+\[
+\mathrm{Var}(Y) = \frac{92}{81}
+\]
+
+\textbf{Step 7: Compute Cov(X,Y)}
+
+\[
+\mathrm{Cov}(X,Y) = 0
+\]
+
+\textbf{Step 8: Compute Correlation}
+
+\[
+\rho = 0
+\]
+
+\hrule
+\vspace{0.5cm}
+
+\section{Jointly Gaussian Random Variables}
+
+\subsection{Definition}
+
+A pair $(X,Y)$ is jointly Gaussian if:
+
+\begin{itemize}
+\item Joint density has bivariate Gaussian form
+\item Marginals are Gaussian
+\end{itemize}
+
+\subsection{Joint Gaussian PDF}
+
+\[
+f_{XY}(x,y) =
+\frac{1}{2\pi\sigma_X\sigma_Y\sqrt{1-\rho^2}}
+\exp\left[
+-\frac{1}{2(1-\rho^2)}
+\left(
+\left(\frac{x-\mu_X}{\sigma_X}\right)^2
++
+\left(\frac{y-\mu_Y}{\sigma_Y}\right)^2
+-2\rho
+\left(\frac{x-\mu_X}{\sigma_X}\right)
+\left(\frac{y-\mu_Y}{\sigma_Y}\right)
+\right)
+\right]
+\]
+
+\subsection{Interpretation}
+
+\begin{itemize}
+\item Used in signal processing
+\item Used in communication systems
+\item Models noisy measurements
+\end{itemize}
+
+Example: CO$_2$ concentration and temperature
+
+If $\rho > 0$ $\rightarrow$ higher CO$_2$ corresponds to higher temperature
+
+\hrule
+\vspace{0.5cm}
+
+\begin{center}
+\textbf{End of Lecture 18 Scribe}
+\end{center}
+
+\end{document}

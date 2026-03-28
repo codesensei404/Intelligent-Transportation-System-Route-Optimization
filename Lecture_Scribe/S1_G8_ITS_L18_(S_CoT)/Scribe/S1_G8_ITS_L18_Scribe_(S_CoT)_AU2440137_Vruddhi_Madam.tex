@@ -1,0 +1,429 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Lecture 18 Scribe – Marginal PMF, Correlation, Covariance, Joint Gaussian RVs}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textit{(Exam Preparation Notes – Step-by-Step Reasoning)}
+
+\hrule
+
+\section*{1. Marginal PMF}
+
+\subsection*{1.1 Definition}
+
+\textbf{The marginal PMF of one variable is obtained by summing the joint PMF over all possible values of the other variable.}
+
+\subsubsection*{Step-by-step reasoning}
+
+\begin{enumerate}
+\item Start with a \textbf{joint PMF} $(P(X,Y))$, which gives probabilities of pairs $((x,y))$.
+\item Suppose we are interested only in \textbf{one variable}, say $(X)$.
+\item The probabilities in the joint PMF include the influence of $(Y)$.
+\item To isolate $(X)$, we:
+\begin{itemize}
+\item \textbf{Fix $(X = x)$}
+\item \textbf{Sum over all possible values of $(Y)$}
+\end{itemize}
+\end{enumerate}
+
+Thus, we remove the dependency on $(Y)$ by aggregation.
+
+\subsection*{1.2 Marginal PMF from Joint PMF Table}
+
+\textbf{Procedure}
+
+Given a table of $(P(X,Y))$:
+
+\subsubsection*{To compute $(P_X(x))$:}
+\begin{enumerate}
+\item Select a fixed value $(x)$
+\item Identify all entries where $(X = x)$
+\item Sum all corresponding probabilities across different $(y)$
+\end{enumerate}
+
+\subsubsection*{To compute $(P_Y(y))$:}
+\begin{enumerate}
+\item Fix $(y)$
+\item Sum all entries across different $(x)$
+\end{enumerate}
+
+\subsection*{1.3 Example (Logical Derivation)}
+
+Given a joint PMF:
+
+\subsubsection*{Solution steps}
+
+\begin{enumerate}
+\item List all values of $(X)$ and $(Y)$
+\item For each value of $(X)$:
+\begin{itemize}
+\item Add probabilities across all $(Y)$
+\end{itemize}
+\item For each value of $(Y)$:
+\begin{itemize}
+\item Add probabilities across all $(X)$
+\end{itemize}
+\end{enumerate}
+
+\subsubsection*{Conclusion}
+
+The resulting sums form:
+\begin{itemize}
+\item Marginal PMF of $(X)$
+\item Marginal PMF of $(Y)$
+\end{itemize}
+
+\section*{2. Correlation}
+
+\subsection*{2.1 Definition (Product Moment)}
+
+\textbf{A basic way to measure joint behavior is through the product moment.}
+
+It computes:
+\begin{itemize}
+\item The \textbf{average value of the product $(XY)$}
+\end{itemize}
+
+\subsection*{2.2 Interpretation}
+
+\subsubsection*{Step-by-step understanding}
+
+\begin{enumerate}
+\item For each outcome:
+\begin{itemize}
+\item Multiply $(X)$ and $(Y)$
+\end{itemize}
+\item Take expectation:
+\begin{itemize}
+\item This gives $(E[XY])$
+\end{itemize}
+\item This reflects:
+\begin{itemize}
+\item Whether large values of $(X)$ occur with large values of $(Y)$
+\end{itemize}
+\end{enumerate}
+
+\subsection*{2.3 Limitations}
+
+The measure:
+
+\[
+R_{XY} = E[XY]
+\]
+
+\subsubsection*{Issues (step-by-step)}
+
+\begin{enumerate}
+\item \textbf{Depends on scale}
+\begin{itemize}
+\item If $(X)$ or $(Y)$ is scaled, value changes
+\end{itemize}
+\item \textbf{Computed about origin}
+\begin{itemize}
+\item Does not consider mean values
+\end{itemize}
+\item \textbf{Mixes multiple effects}
+\begin{itemize}
+\item Mean
+\item Spread
+\item Dependence
+\end{itemize}
+\end{enumerate}
+
+\subsubsection*{Special case}
+
+\[
+R_{XY} = 0
+\Rightarrow \text{orthogonal about the origin}
+\]
+
+\subsection*{2.4 Transition to Covariance}
+
+To fix these issues:
+
+\begin{enumerate}
+\item Remove the effect of mean
+\item Center variables:
+\begin{itemize}
+\item Replace $(X)$ with $(X - E[X])$
+\item Replace $(Y)$ with $(Y - E[Y])$
+\end{itemize}
+\end{enumerate}
+
+This leads to \textbf{covariance}.
+
+\section*{3. Covariance}
+
+\subsection*{3.1 Definition}
+
+\textbf{We first subtract the mean from each variable and then measure how the centered quantities vary together.}
+
+\subsection*{3.2 Step-by-step Derivation}
+
+\begin{enumerate}
+\item Compute mean values:
+\begin{itemize}
+\item $(E[X])$, $(E[Y])$
+\end{itemize}
+\item Form deviations:
+\begin{itemize}
+\item $(X - E[X])$
+\item $(Y - E[Y])$
+\end{itemize}
+\item Multiply deviations:
+\begin{itemize}
+\item $((X - E[X])(Y - E[Y]))$
+\end{itemize}
+\item Take expectation:
+\begin{itemize}
+\item This gives covariance
+\end{itemize}
+\end{enumerate}
+
+\subsection*{3.3 Interpretation}
+
+Covariance captures:
+\begin{itemize}
+\item \textbf{Positive covariance}:
+\begin{itemize}
+\item Both variables deviate in same direction
+\end{itemize}
+\item \textbf{Negative covariance}:
+\begin{itemize}
+\item Variables deviate in opposite directions
+\end{itemize}
+\end{itemize}
+
+\subsection*{3.4 Algebraic Form (Step-by-step)}
+
+Start with definition:
+
+\begin{enumerate}
+\item Expand product:
+\[
+(X - E[X])(Y - E[Y])
+\]
+\item Multiply terms
+\item Apply expectation
+\item Use linearity of expectation
+\item Simplify
+\end{enumerate}
+
+This gives a computationally simpler expression.
+
+\subsection*{3.5 Properties of Covariance}
+
+\subsubsection*{1. Symmetry}
+
+\[
+\text{Cov}(X,Y) = \text{Cov}(Y,X)
+\]
+
+\subsubsection*{2. Variance as Special Case}
+
+\[
+\text{Var}(X) = \text{Cov}(X,X)
+\]
+
+\subsubsection*{3. Linearity w.r.t Constants}
+
+Scaling variables scales covariance accordingly
+
+\subsubsection*{4. Independence}
+
+If $(X)$ and $(Y)$ are independent:
+
+\[
+\text{Cov}(X,Y) = 0
+\]
+
+\textbf{Important conclusion}
+
+\begin{itemize}
+\item Zero covariance $\Rightarrow$ \textbf{uncorrelated}
+\item But \textbf{does NOT imply independence}
+\end{itemize}
+
+\subsection*{3.6 Example 1 (Step-by-step)}
+
+\textbf{Given}
+
+Expressions for $(X)$, $(Y)$
+
+\subsubsection*{Solution steps}
+
+\begin{enumerate}
+\item Write covariance formula
+\item Substitute given expressions
+\item Expand terms
+\item Apply expectation operator
+\item Simplify step-by-step
+\end{enumerate}
+
+\subsubsection*{Conclusion}
+
+Final value obtained after systematic substitution
+
+\subsection*{3.7 Example 2 (Continuous Case)}
+
+Given a joint PDF.
+
+\subsubsection*{Step-by-step solution}
+
+\begin{enumerate}
+\item Compute:
+\begin{itemize}
+\item $(E[X])$ using integration
+\end{itemize}
+\item Compute:
+\begin{itemize}
+\item $(E[Y])$
+\end{itemize}
+\item Compute:
+\begin{itemize}
+\item $(E[XY])$
+\end{itemize}
+\item Substitute into covariance formula
+\item Simplify result
+\end{enumerate}
+
+\section*{4. Pearson’s Correlation Coefficient}
+
+\subsection*{4.1 Definition}
+
+\textbf{Pearson’s correlation coefficient calculates the effect of change in one variable when the other variable changes.}
+
+\subsection*{4.2 Step-by-step Interpretation}
+
+\begin{enumerate}
+\item Start from covariance
+\item Normalize using:
+\begin{itemize}
+\item Standard deviation of $(X)$
+\item Standard deviation of $(Y)$
+\end{itemize}
+\item This removes unit dependence
+\end{enumerate}
+
+\subsection*{4.3 Properties}
+
+Measures:
+\begin{itemize}
+\item \textbf{Strength} of relationship
+\item \textbf{Direction} of relationship
+\end{itemize}
+
+It is:
+\begin{itemize}
+\item \textbf{Unit-free}
+\item \textbf{Normalized covariance}
+\end{itemize}
+
+\section*{5. Jointly Gaussian Random Variables}
+
+\subsection*{5.1 Definition}
+
+\textbf{A pair $((X,Y))$ is jointly Gaussian if:}
+
+\begin{itemize}
+\item The joint density has bivariate Gaussian form
+\item Marginals are Gaussian
+\end{itemize}
+
+\subsection*{5.2 Intuition}
+
+\subsubsection*{Step-by-step reasoning}
+
+\begin{enumerate}
+\item Many real-world variables are influenced by:
+\begin{itemize}
+\item Multiple small random factors
+\end{itemize}
+\item When combined:
+\begin{itemize}
+\item They tend to follow Gaussian behavior
+\end{itemize}
+\item Hence, joint distribution becomes Gaussian
+\end{enumerate}
+
+\subsection*{5.3 Applications}
+
+\begin{itemize}
+\item Signal processing
+\item Communication systems
+\item Noisy measurements
+\end{itemize}
+
+\subsection*{5.4 Example: Climate System}
+
+Variables:
+\begin{itemize}
+\item $(X)$: CO$_2$ concentration
+\item $(Y)$: Temperature anomaly
+\end{itemize}
+
+\subsubsection*{Reasoning}
+
+\begin{enumerate}
+\item Both depend on multiple random processes:
+\begin{itemize}
+\item Weather
+\item Ocean circulation
+\item Emissions
+\end{itemize}
+\item These combined uncertainties:
+\begin{itemize}
+\item Produce approximately Gaussian behavior
+\end{itemize}
+\item Hence:
+\begin{itemize}
+\item Joint distribution $\approx$ Gaussian
+\end{itemize}
+\end{enumerate}
+
+\subsection*{5.5 Algebraic Form and Interpretation}
+
+Joint Gaussian is characterized by:
+\begin{enumerate}
+\item Means
+\item Variances
+\item Covariance
+\end{enumerate}
+
+These parameters fully describe:
+\begin{itemize}
+\item Shape
+\item Spread
+\item Dependence structure
+\end{itemize}
+
+\section*{Final Exam Summary}
+
+\subsection*{Core Flow of Concepts}
+
+\begin{enumerate}
+\item Joint PMF $\rightarrow$ Marginal PMF (by summation)
+\item Raw correlation $(E[XY]) \rightarrow$ not centered
+\item Center variables $\rightarrow$ Covariance
+\item Normalize covariance $\rightarrow$ Pearson coefficient
+\item Extend to continuous case $\rightarrow$ Joint Gaussian RVs
+\end{enumerate}
+
+\subsection*{Key Insights to Remember}
+
+\begin{itemize}
+\item Marginalization removes dependence on one variable
+\item Covariance measures \textbf{joint deviation from mean}
+\item Zero covariance $\neq$ independence
+\item Pearson coefficient is \textbf{scale-free}
+\item Joint Gaussian models real-world continuous systems
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,11 @@
+Prompt-1: To generate the actual Scribe
+
+Generate a lecture scribe for exam preparation based on the provided PDF covering the 'Min-Cut Problem, Max-Flow Min-Cut Theorem, Stoer-Wagner Deterministic Algorithm, and Karger’s Randomized Algorithm'. Reason step-by-step through definitions, edge contraction assumptions, and example solutions exactly as presented. Explicitly derive the logical flow for successful versus unsuccessful runs and algorithm comparisons in paragraph format. Do not introduce external material or derivations not found in the context.
+
+
+
+
+
+Prompt-2: For turning the Scribe to LaTeX
+
+Generate Latex code for the lecture scribe. The content must match the scribe provided exactly, with no additions, deletions, or edits in any text/equation.
