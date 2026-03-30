@@ -105,6 +105,6 @@ else:
         route_coords[-1], popup=f'Destination: {dest_query}', icon=folium.Icon(color='red', icon='stop')
     ).add_to(route_map)
     
-    filename = "dynamic_dijkstra_map.html"
+    filename = "Deterministic_dijkstra_map.html"
     route_map.save(filename)
     print(f"Done! Open '{filename}' in your web browser.")

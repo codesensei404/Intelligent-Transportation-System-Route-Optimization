@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e915edf3987adfd3c3001c685bf5233d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e915edf3987adfd3c3001c685bf5233d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e915edf3987adfd3c3001c685bf5233d = L.map(
+                "map_e915edf3987adfd3c3001c685bf5233d",
+                {
+                    center: [23.01730478414634, 72.56589008902439],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_83e1ccec4d0c650ef0fe7eec772f2ce2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_83e1ccec4d0c650ef0fe7eec772f2ce2.addTo(map_e915edf3987adfd3c3001c685bf5233d);
+        
+    
+            var poly_line_5cad5b1c3318717f8912ffe3868eb7a7 = L.polyline(
+                [[22.9971476, 72.5833178], [22.9971001, 72.5837917], [22.9981995, 72.5835626], [22.9982619, 72.5835365], [22.9985899, 72.5834366], [22.9988193, 72.5834133], [22.9989247, 72.583406], [22.9989547, 72.5830159], [22.9990095, 72.5822287], [22.9993153, 72.5822259], [22.9995251, 72.5822672], [23.0007028, 72.5823824], [23.0040246, 72.582173], [23.0046743, 72.5821745], [23.004716, 72.5821791], [23.0051187, 72.5822638], [23.0054021, 72.5823244], [23.0057364, 72.5796371], [23.0057485, 72.5795951], [23.0079428, 72.5803893], [23.0079854, 72.5804008], [23.0081926, 72.5804571], [23.0086239, 72.5805625], [23.0099749, 72.5808946], [23.0106411, 72.5778782], [23.0107899, 72.5770845], [23.0122738, 72.5693956], [23.0123131, 72.5691974], [23.0123384, 72.5690781], [23.0126827, 72.5680962], [23.0134975, 72.5661358], [23.0136524, 72.5658121], [23.0138943, 72.5654313], [23.0140194, 72.5652499], [23.0141447, 72.5650344], [23.0141877, 72.5649735], [23.0143185, 72.5647479], [23.01564, 72.563009], [23.0157088, 72.5629529], [23.0159104, 72.5627688], [23.0159304, 72.5627567], [23.0200123, 72.5607287], [23.0201495, 72.5606738], [23.0200201, 72.5596753], [23.0199295, 72.5587287], [23.0196395, 72.5574853], [23.0195984, 72.5573934], [23.0197033, 72.5573515], [23.0216426, 72.556581], [23.0224369, 72.5561674], [23.022439, 72.5561521], [23.0224669, 72.5561105], [23.022511, 72.5560999], [23.0225517, 72.556124], [23.0225602, 72.5561359], [23.0247998, 72.5561044], [23.0255154, 72.5563901], [23.025652, 72.5561336], [23.0260762, 72.5556487], [23.0265864, 72.5553872], [23.027317, 72.5552882], [23.0278943, 72.555212], [23.0292222, 72.5551425], [23.0292413, 72.5550912], [23.029307, 72.5550874], [23.029331, 72.5551388], [23.0300988, 72.5550699], [23.0301761, 72.5550673], [23.0305699, 72.555054], [23.030749, 72.555048], [23.031009, 72.5550393], [23.0314831, 72.5550222], [23.0319333, 72.5550057], [23.0330653, 72.5549898], [23.0331292, 72.554991], [23.0337505, 72.5549718], [23.0345141, 72.5549384], [23.0345735, 72.554936], [23.0351221, 72.5549169], [23.0355842, 72.5549169], [23.0357926, 72.5538921], [23.0362044, 72.5538582]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_e915edf3987adfd3c3001c685bf5233d);
+        
+    
+            poly_line_5cad5b1c3318717f8912ffe3868eb7a7.bindTooltip(
+                `<div>
+                     Deterministic Dijkstra Path
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_130ca0e5d60533bd552b33af41e35721 = L.marker(
+                [22.9971476, 72.5833178],
+                {
+}
+            ).addTo(map_e915edf3987adfd3c3001c685bf5233d);
+        
+    
+            var icon_0277531e16d3dcd931544c47ed0c0f30 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f0f3522c60f0b91776367efc893b146 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_20b0725b449b27fc6399a9eaa5fc1439 = $(`<div id="html_20b0725b449b27fc6399a9eaa5fc1439" style="width: 100.0%; height: 100.0%;">Source: Danilimda</div>`)[0];
+                popup_7f0f3522c60f0b91776367efc893b146.setContent(html_20b0725b449b27fc6399a9eaa5fc1439);
+            
+        
+
+        marker_130ca0e5d60533bd552b33af41e35721.bindPopup(popup_7f0f3522c60f0b91776367efc893b146)
+        ;
+
+        
+    
+    
+                marker_130ca0e5d60533bd552b33af41e35721.setIcon(icon_0277531e16d3dcd931544c47ed0c0f30);
+            
+    
+            var marker_7afedc03a5970a12f506bbde390f1aee = L.marker(
+                [23.0362044, 72.5538582],
+                {
+}
+            ).addTo(map_e915edf3987adfd3c3001c685bf5233d);
+        
+    
+            var icon_a504cfdb0b195829f6aa375346404083 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "stop",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad9821ff34a8434b1daae798ec8aef94 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_88470649c5da8bfd924068900e2f7000 = $(`<div id="html_88470649c5da8bfd924068900e2f7000" style="width: 100.0%; height: 100.0%;">Destination: Ahmedabad University</div>`)[0];
+                popup_ad9821ff34a8434b1daae798ec8aef94.setContent(html_88470649c5da8bfd924068900e2f7000);
+            
+        
+
+        marker_7afedc03a5970a12f506bbde390f1aee.bindPopup(popup_ad9821ff34a8434b1daae798ec8aef94)
+        ;
+
+        
+    
+    
+                marker_7afedc03a5970a12f506bbde390f1aee.setIcon(icon_a504cfdb0b195829f6aa375346404083);
+            
+</script>
+</html>
