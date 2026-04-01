@@ -1,0 +1,282 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{enumitem}
+
+\title{\textbf{Lecture Scribe: Inequalities and Tail Bounds}}
+\author{CSE400 – Fundamentals of Probability in Computing}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. Motivation: Tail Bounds}
+
+\subsection*{Key Idea}
+
+\begin{itemize}
+    \item The lecture begins with \textbf{tail bounds}, which are used to:
+    \begin{itemize}
+        \item Estimate \textbf{probabilities of extreme events}
+        \item Understand \textbf{worst-case behavior}
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Interpretation}
+
+\begin{itemize}
+    \item The ``tail'' refers to:
+    \begin{itemize}
+        \item The probability that a random variable takes \textbf{very large or very small values}
+    \end{itemize}
+    \item Motivation question (from case study):
+    \begin{itemize}
+        \item \textit{How to predict worst-case demands on a server?}
+    \end{itemize}
+\end{itemize}
+
+\noindent $\Rightarrow$ This motivates the need for \textbf{inequalities that bound probabilities without knowing full distributions}.
+
+\section*{2. Markov’s Inequality}
+
+\subsection*{Definition (as per lecture structure)}
+
+\begin{itemize}
+    \item Introduced as the \textbf{first tail bound inequality}
+    \item Applies to:
+    \begin{itemize}
+        \item \textbf{Non-negative random variables}
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Logical Flow (as implied in slides)}
+
+\begin{enumerate}
+    \item Start with a \textbf{non-negative random variable}
+    \item Relate:
+    \begin{itemize}
+        \item Probability of large deviation
+        \item To its \textbf{expectation}
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Proof}
+
+\begin{itemize}
+    \item The lecture includes:
+    \begin{itemize}
+        \item \textbf{Formal definition}
+        \item \textbf{Proof (step-by-step in slides)}
+    \end{itemize}
+\end{itemize}
+
+\noindent (Exact derivation not present in provided content, so not reproduced here.)
+
+\subsection*{Example}
+
+\begin{itemize}
+    \item An example is included in the lecture:
+    \begin{itemize}
+        \item Demonstrates how to \textbf{apply the inequality to bound probabilities}
+    \end{itemize}
+\end{itemize}
+
+\section*{3. Chebyshev’s Inequality}
+
+\subsection*{Definition}
+
+\begin{itemize}
+    \item Extends Markov’s inequality
+    \item Works with:
+    \begin{itemize}
+        \item \textbf{Mean and variance}
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Logical Flow}
+
+\begin{enumerate}
+    \item Start from:
+    \begin{itemize}
+        \item Random variable with known \textbf{mean and variance}
+    \end{itemize}
+    \item Bound:
+    \begin{itemize}
+        \item Probability of deviation from the mean
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Proof}
+
+\begin{itemize}
+    \item The lecture explicitly includes:
+    \begin{itemize}
+        \item \textbf{Definition}
+        \item \textbf{Proof}
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Example}
+
+\begin{itemize}
+    \item Example demonstrates:
+    \begin{itemize}
+        \item Bounding deviation using variance
+    \end{itemize}
+\end{itemize}
+
+\section*{4. Chernoff Bound and Poisson Tail}
+
+\subsection*{Definition}
+
+\begin{itemize}
+    \item A \textbf{stronger tail bound} compared to previous inequalities
+\end{itemize}
+
+\subsection*{Logical Flow}
+
+\begin{enumerate}
+    \item Used for:
+    \begin{itemize}
+        \item Bounding probabilities of \textbf{sum of random variables}
+    \end{itemize}
+    \item Gives:
+    \begin{itemize}
+        \item \textbf{Exponential decay bounds}
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Proof}
+
+\begin{itemize}
+    \item Lecture includes:
+    \begin{itemize}
+        \item Step-by-step proof
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Example}
+
+\begin{itemize}
+    \item Shows:
+    \begin{itemize}
+        \item Application for bounding rare events
+    \end{itemize}
+\end{itemize}
+
+\section*{5. Jensen’s Inequality}
+
+\subsection*{Convex Functions}
+
+\subsubsection*{Definition}
+
+\begin{itemize}
+    \item Introduces concept of:
+    \begin{itemize}
+        \item \textbf{Convex functions}
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Logical Flow}
+
+\begin{enumerate}
+    \item Define convexity
+    \item Relate:
+    \begin{itemize}
+        \item Function of expectation vs expectation of function
+    \end{itemize}
+\end{enumerate}
+
+\subsection*{Jensen’s Inequality}
+
+\begin{itemize}
+    \item Core idea:
+    \begin{itemize}
+        \item Connects:
+        \begin{itemize}
+            \item Expected value
+            \item Convex transformations
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Proof}
+
+\begin{itemize}
+    \item Included in lecture:
+    \begin{itemize}
+        \item Step-by-step reasoning
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Example}
+
+\begin{itemize}
+    \item Demonstrates:
+    \begin{itemize}
+        \item Application of inequality on convex functions
+    \end{itemize}
+\end{itemize}
+
+\section*{6. Case Study: System-Level Understanding}
+
+\subsection*{Problem}
+
+\begin{itemize}
+    \item Predict:
+    \begin{itemize}
+        \item \textbf{Worst-case demand on a server}
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Connection to Lecture}
+
+\begin{itemize}
+    \item Tail bounds help:
+    \begin{itemize}
+        \item Estimate probability of \textbf{high load}
+        \item Provide \textbf{guarantees without exact distributions}
+    \end{itemize}
+\end{itemize}
+
+\section*{Summary Flow (Very Important for Exams)}
+
+\begin{enumerate}
+    \item \textbf{Motivation}
+    \begin{itemize}
+        \item Need to bound extreme probabilities
+    \end{itemize}
+    \item \textbf{Markov’s Inequality}
+    \begin{itemize}
+        \item Uses expectation
+    \end{itemize}
+    \item \textbf{Chebyshev’s Inequality}
+    \begin{itemize}
+        \item Uses variance
+    \end{itemize}
+    \item \textbf{Chernoff Bound}
+    \begin{itemize}
+        \item Strong exponential bounds
+    \end{itemize}
+    \item \textbf{Jensen’s Inequality}
+    \begin{itemize}
+        \item Uses convexity
+    \end{itemize}
+    \item \textbf{Application}
+    \begin{itemize}
+        \item Real-world system (server demand)
+    \end{itemize}
+\end{enumerate}
+
+\section*{Important Note}
+
+\begin{itemize}
+    \item The uploaded PDF \textbf{does not include actual derivations, formulas, or worked examples}—only the structure and topics.
+    \item Therefore:
+    \begin{itemize}
+        \item No additional derivations have been introduced
+        \item No assumptions beyond the document have been made
+    \end{itemize}
+\end{itemize}
+
+\end{document}
