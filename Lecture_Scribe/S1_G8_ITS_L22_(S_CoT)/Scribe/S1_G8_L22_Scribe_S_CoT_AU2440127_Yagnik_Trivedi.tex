@@ -1,0 +1,442 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+
+\title{CSE400 – Fundamentals of Probability in Computing}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Lecture 21 \& 22: Inequalities and Tail Bounds (Fully Expanded Exam Scribe)}
+
+\hrule
+\vspace{10pt}
+
+\section*{1. Tail of a Random Variable}
+
+\subsection*{Definition}
+
+The tail of a random variable X is defined as:
+
+\[
+P(X > x)
+\]
+
+This represents the probability that X takes values larger than x.
+
+\hrule
+
+\subsection*{Why do we care about tails?}
+
+\begin{itemize}
+\item Jobs delayed more than 24 hours
+\item Packets dropped due to full buffer
+\end{itemize}
+
+These correspond to rare but critical events in systems.
+
+\hrule
+
+\subsection*{Key Idea}
+
+\begin{itemize}
+\item Mean → average behavior (easy to compute)
+\item Tail → rare extreme events (hard to compute)
+\end{itemize}
+
+\hrule
+
+\subsection*{Why are tails hard to compute?}
+
+\begin{itemize}
+\item Requires summing many small probabilities
+\end{itemize}
+
+\hrule
+
+\section*{2. Tail Example 1 (Binomial Case)}
+
+\subsection*{Problem}
+
+Suppose you’re distributing n jobs among n servers at random. What is the probability that a particular server gets ≥ k jobs?
+
+\hrule
+
+\subsection*{Intuition}
+
+\begin{itemize}
+\item Jobs are assigned randomly
+\item Most servers get few jobs
+\item Occasionally, one server gets many jobs
+\end{itemize}
+
+This corresponds to a tail event (rare overload).
+
+\hrule
+
+\subsection*{Model}
+
+\[
+X \sim \text{Binomial}(n, p)
+\]
+
+\hrule
+
+\subsection*{Exact Tail Probability}
+
+\[
+P(X \geq k) = \sum_{i=k}^{n} \binom{n}{i} p^i (1 - p)^{n - i}
+\]
+
+\hrule
+
+\subsection*{Step-by-Step Logic}
+
+\begin{enumerate}
+\item We are interested in the probability that X is at least k.
+\item This includes all outcomes where X = k, k+1, ..., n.
+\item The probability of exactly i successes is:
+\[
+\binom{n}{i} p^i (1-p)^{n-i}
+\]
+\item Therefore, summing over all i ≥ k gives the tail probability.
+\end{enumerate}
+
+\hrule
+
+\section*{3. Tail Example 2 (Poisson Case)}
+
+\subsection*{Problem}
+
+Jobs arrive to a datacenter according to a Poisson process with rate λ jobs/hour. What is the probability that ≥ k jobs arrive during the first hour?
+
+\hrule
+
+\subsection*{Intuition}
+
+\begin{itemize}
+\item Jobs arrive randomly over time
+\item Most hours have moderate arrivals
+\item Sometimes, a burst of arrivals occurs
+\end{itemize}
+
+This is a tail event (sudden spike in load).
+
+\hrule
+
+\subsection*{Model}
+
+\[
+X \sim \text{Poisson}(\lambda)
+\]
+
+\hrule
+
+\subsection*{Exact Tail Probability}
+
+\[
+P(X \geq k) = \sum_{i=k}^{\infty} e^{-\lambda} \frac{\lambda^i}{i!}
+\]
+
+\hrule
+
+\subsection*{Step-by-Step Logic}
+
+\begin{enumerate}
+\item Poisson gives probability of exactly i arrivals.
+\item Tail event requires summing probabilities from k to infinity.
+\end{enumerate}
+
+\hrule
+
+\section*{4. Why Tail Bounds?}
+
+\subsection*{Observation}
+
+Exact tail probabilities are often hard to compute.
+
+\hrule
+
+\subsection*{Exact Computation}
+
+\begin{itemize}
+\item Binomial sum
+\item Poisson infinite sum
+\end{itemize}
+
+These are complicated and long.
+
+\hrule
+
+\subsection*{Idea}
+
+Instead of computing exact probability:
+
+\[
+P(X \geq k)
+\]
+
+We compute an upper bound:
+
+\[
+P(X \geq k) \leq \text{something simple}
+\]
+
+\hrule
+
+\subsection*{Key Idea}
+
+Approximate safely instead of computing exactly.
+
+\hrule
+
+\section*{5. Running Example}
+
+\subsection*{Experiment}
+
+Flip a fair coin n times.
+
+\hrule
+
+\subsection*{Distribution}
+
+\[
+X = \text{number of heads}
+\]
+\[
+X \sim \text{Binomial}(n, 1/2)
+\]
+
+\hrule
+
+\subsection*{Mean}
+
+\[
+E[X] = n/2
+\]
+
+\hrule
+
+\subsection*{Question}
+
+What is P(X ≥ 3n/4)?
+
+\hrule
+
+\subsection*{Interpretation}
+
+This represents getting unusually many heads, which lies in the tail region.
+
+\hrule
+
+\section*{6. Markov’s Inequality}
+
+\subsection*{Key Idea}
+
+\begin{itemize}
+\item Uses only the mean
+\item Large values are rare
+\end{itemize}
+
+\hrule
+
+\subsection*{Statement}
+
+\[
+P(X \geq a) \leq \frac{E[X]}{a}
+\]
+
+\hrule
+
+\subsection*{Assumption}
+
+\[
+X \geq 0
+\]
+
+\hrule
+
+\subsection*{Proof (Detailed Steps)}
+
+\begin{enumerate}
+\item Start from expectation:
+\[
+E[X] = \sum x P(X = x)
+\]
+
+\item Consider only terms where x ≥ a: \\
+Since x ≥ a,
+\[
+x P(X=x) \geq a P(X=x)
+\]
+
+\item Therefore:
+\[
+E[X] \geq \sum_{x \geq a} a P(X=x)
+\]
+
+\item Factor out a:
+\[
+E[X] \geq a \sum_{x \geq a} P(X=x)
+\]
+
+\item Recognize probability:
+\[
+\sum_{x \geq a} P(X=x) = P(X \geq a)
+\]
+
+\item Hence:
+\[
+E[X] \geq a P(X \geq a)
+\]
+
+\item Rearranging:
+\[
+P(X \geq a) \leq \frac{E[X]}{a}
+\]
+\end{enumerate}
+
+\hrule
+
+\subsection*{Example Logic}
+
+If average = 10, then values like 100 are rare.
+
+\hrule
+
+\section*{7. Chebyshev’s Inequality}
+
+\subsection*{Statement}
+
+\[
+P(|X - \mu| \geq k) \leq \frac{\text{Var}(X)}{k^2}
+\]
+
+\hrule
+
+\subsection*{Proof (Step-by-Step)}
+
+\begin{enumerate}
+\item Let Y = (X - μ)²
+
+\item Apply Markov inequality:
+\[
+P(Y \geq k^2) \leq \frac{E[Y]}{k^2}
+\]
+
+\item Substitute:
+\[
+P((X - \mu)^2 \geq k^2) \leq \frac{E[(X - \mu)^2]}{k^2}
+\]
+
+\item Recognize variance:
+\[
+E[(X - \mu)^2] = \text{Var}(X)
+\]
+
+\item Therefore:
+\[
+P(|X - \mu| \geq k) \leq \frac{\text{Var}(X)}{k^2}
+\]
+\end{enumerate}
+
+\hrule
+
+\section*{8. Chernoff Bound}
+
+\subsection*{Key Idea}
+
+Use exponential transformation.
+
+\hrule
+
+\subsection*{Steps}
+
+\begin{enumerate}
+\item Start with probability:
+\[
+P(X \geq a)
+\]
+
+\item Apply monotonic transformation:
+\[
+P(e^{tX} \geq e^{ta})
+\]
+
+\item Apply Markov inequality:
+\[
+P(e^{tX} \geq e^{ta}) \leq \frac{E[e^{tX}]}{e^{ta}}
+\]
+
+\item Therefore:
+\[
+P(X \geq a) \leq \frac{E[e^{tX}]}{e^{ta}}
+\]
+\end{enumerate}
+
+\hrule
+
+\subsection*{Insight}
+
+\begin{itemize}
+\item Converts problem into expectation of exponential
+\item Leads to tighter bounds
+\end{itemize}
+
+\hrule
+
+\section*{9. Poisson Tail Bound}
+
+Used for Poisson distributions using Chernoff method.
+
+\hrule
+
+\section*{10. Jensen’s Inequality}
+
+\subsection*{Convex Function Definition}
+
+\[
+f(\lambda x + (1-\lambda)y) \leq \lambda f(x) + (1-\lambda)f(y)
+\]
+
+\hrule
+
+\subsection*{Statement}
+
+\[
+f(E[X]) \leq E[f(X)]
+\]
+
+\hrule
+
+\subsection*{Interpretation}
+
+Function of expectation is less than expectation of function.
+
+\hrule
+
+\section*{11. Summary}
+
+\begin{itemize}
+\item Tail = extreme event probability
+\item Exact computation = hard
+\item Bounds = easier
+\end{itemize}
+
+\hrule
+
+\section*{12. Comparison}
+
+\begin{itemize}
+\item Markov → uses mean
+\item Chebyshev → uses variance
+\item Chernoff → strongest bound
+\end{itemize}
+
+\hrule
+
+\section*{End of Complete Exam Scribe}
+
+\end{document}
