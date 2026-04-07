@@ -1,0 +1,336 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Lecture-22 Scribe: Inequalities and Tail Bounds (From Markov’s Inequality Onward)}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textit{(Exam Preparation Notes – Step-by-Step Reasoning)}
+
+\hrule
+
+\section*{1. Markov’s Inequality}
+
+\subsection*{1.1 Definition}
+
+Let $X$ be a non-negative random variable $(X \ge 0)$.
+
+For any $a > 0$,
+
+\[
+P (X \ge a) \le \frac{E[X]}{a}
+\]
+
+\subsection*{1.2 Step-by-Step Proof}
+
+\textbf{Step 1: Start from expectation}
+
+\[
+E[X] = \sum_x x \cdot P (X = x)
+\]
+
+\textbf{Step 2: Split based on threshold $a$}
+
+\[
+E[X] = \sum_{x<a} xP (X = x) + \sum_{x \ge a} xP (X = x)
+\]
+
+\textbf{Step 3: Bound the large-value part}
+
+For all $x \ge a$,
+
+\[
+x \ge a \Rightarrow xP (X = x) \ge aP (X = x)
+\]
+
+Thus,
+
+\[
+\sum_{x \ge a} xP (X = x) \ge a \sum_{x \ge a} P (X = x)
+\]
+
+\[
+= a \cdot P (X \ge a)
+\]
+
+\textbf{Step 4: Combine}
+
+\[
+E[X] \ge a \cdot P (X \ge a)
+\]
+
+\textbf{Step 5: Rearranging}
+
+\[
+P (X \ge a) \le \frac{E[X]}{a}
+\]
+
+\subsection*{1.3 Example}
+
+If:
+
+\[
+E[X] = 10
+\]
+
+Then:
+
+\[
+P (X \ge 50) \le \frac{10}{50} = 0.2
+\]
+
+\subsection*{1.4 Key Insight}
+
+No assumption on distribution.\\
+Only requires non-negativity.\\
+Provides a loose but universal bound.
+
+\section*{2. Chebyshev’s Inequality}
+
+\subsection*{2.1 Motivation}
+
+Markov’s inequality only uses expectation.
+
+To get a tighter bound, we incorporate variance.
+
+\subsection*{2.2 Definition}
+
+For any random variable $X$ with mean $\mu$ and variance $\sigma^2$,
+
+\[
+P (|X - \mu| \ge a) \le \frac{\sigma^2}{a^2}
+\]
+
+\subsection*{2.3 Proof Using Markov’s Inequality}
+
+\textbf{Step 1: Define new variable}
+
+Let:
+
+\[
+Y = (X - \mu)^2
+\]
+
+$Y \ge 0$, so Markov applies.
+
+\textbf{Step 2: Apply Markov}
+
+\[
+P (Y \ge a^2) \le \frac{E[Y]}{a^2}
+\]
+
+\textbf{Step 3: Substitute back}
+
+\[
+P ((X - \mu)^2 \ge a^2) = P (|X - \mu| \ge a)
+\]
+
+\textbf{Step 4: Use variance definition}
+
+\[
+E[Y] = E[(X - \mu)^2] = \sigma^2
+\]
+
+\textbf{Final Result}
+
+\[
+P (|X - \mu| \ge a) \le \frac{\sigma^2}{a^2}
+\]
+
+\subsection*{2.4 Example}
+
+If:
+
+\[
+\mu = 100, \quad \sigma^2 = 25
+\]
+
+Then:
+
+\[
+P (|X - 100| \ge 10) \le \frac{25}{100} = 0.25
+\]
+
+\subsection*{2.5 Insight}
+
+Uses both mean and spread.\\
+Stronger than Markov.\\
+Still distribution-independent.
+
+\section*{3. Chernoff Bound (Poisson Tail)}
+
+\subsection*{3.1 Motivation}
+
+Markov and Chebyshev give loose bounds.
+
+Need exponentially decreasing bounds for sums of random variables.
+
+\subsection*{3.2 Idea}
+
+Instead of applying Markov to $X$, apply it to:
+
+\[
+e^{tX}
+\]
+
+This amplifies large deviations.
+
+\subsection*{3.3 Markov on Exponential}
+
+Apply Markov:
+
+\[
+P (X \ge a) = P (e^{tX} \ge e^{ta})
+\]
+
+\[
+P (e^{tX} \ge e^{ta}) \le \frac{E[e^{tX}]}{e^{ta}}
+\]
+
+\subsection*{3.4 Resulting Bound}
+
+\[
+P (X \ge a) \le \frac{E[e^{tX}]}{e^{ta}}
+\]
+
+Choose $t$ to minimize the bound.
+
+\subsection*{3.5 Interpretation}
+
+Uses moment generating function (MGF).\\
+Produces exponentially tight bounds.\\
+Especially useful for:
+
+Sum of independent random variables\\
+Poisson-type tails
+
+\subsection*{3.6 Key Insight}
+
+Transforming the variable makes rare events more visible.
+
+Leads to much stronger guarantees than Chebyshev.
+
+\section*{4. Jensen’s Inequality}
+
+\subsection*{4.1 Convex Functions}
+
+A function $f$ is convex if:
+
+\[
+f(\lambda x + (1 - \lambda)y) \le \lambda f(x) + (1 - \lambda)f(y)
+\]
+
+for $0 \le \lambda \le 1$.
+
+\subsection*{4.2 Definition of Jensen’s Inequality}
+
+For a convex function $f$:
+
+\[
+f(E[X]) \le E[f(X)]
+\]
+
+\subsection*{4.3 Proof Idea (Step-by-Step Reasoning)}
+
+\textbf{Step 1: Use convexity}
+
+Convexity says function lies below line segments.
+
+\textbf{Step 2: Represent expectation as weighted sum}
+
+\[
+E[X] = \sum_i p_i x_i
+\]
+
+\textbf{Step 3: Apply convexity repeatedly}
+
+\[
+f\left(\sum_i p_i x_i\right) \le \sum_i p_i f(x_i)
+\]
+
+\textbf{Step 4: Recognize expectation}
+
+\[
+f(E[X]) \le E[f(X)]
+\]
+
+\subsection*{4.4 Example Insight}
+
+If $f(x) = x^2$ (convex):
+
+\[
+(E[X])^2 \le E[X^2]
+\]
+
+\subsection*{4.5 Interpretation}
+
+Applying function after expectation gives smaller value than:
+
+Taking expectation after applying function
+
+\section*{5. Case Study: Worst-Case Server Demand}
+
+\subsection*{5.1 Problem Context}
+
+Predict maximum load on a server.
+
+Exact distribution unknown.
+
+\subsection*{5.2 Approach Using Inequalities}
+
+\textbf{Step 1: Use expectation}
+
+Apply Markov for rough bound.
+
+\textbf{Step 2: Use variance}
+
+Apply Chebyshev for tighter bound.
+
+\textbf{Step 3: Use exponential bounds}
+
+Apply Chernoff for strong guarantees.
+
+\subsection*{5.3 Key Insight}
+
+These inequalities allow:
+
+Bounding rare events\\
+Designing systems with guarantees\\
+Understanding worst-case scenarios
+
+\section*{6. Final Summary (Exam Revision)}
+
+\begin{tabular}{|c|c|c|}
+\hline
+Inequality & Uses & Strength \\
+\hline
+Markov & Expectation & Weak \\
+\hline
+Chebyshev & Mean + Variance & Moderate \\
+\hline
+Chernoff & Exponential moments & Strong \\
+\hline
+Jensen & Convexity & Structural \\
+\hline
+\end{tabular}
+
+\subsection*{Final Takeaway}
+
+All inequalities aim to bound:
+
+\[
+P (\text{large deviation})
+\]
+
+Increasing strength:
+
+Markov $\rightarrow$ Chebyshev $\rightarrow$ Chernoff
+
+Jensen provides a fundamental tool for expectation transformations.
+
+\end{document}
