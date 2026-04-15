@@ -1,0 +1,411 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+
+\title{Lecture 26: Stochastic Processes -- Part 1}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Topics}
+SSS, WSS, Ergodic Process
+
+\section{Basics of Stochastic Processes (Revision)}
+
+\subsection{Concept of Waveform Collections and Realizations}
+
+\begin{itemize}
+    \item A stochastic process is viewed as a \textbf{collection of waveforms}.
+    \item Each waveform corresponds to a \textbf{realization}.
+    \item Each realization is associated with an outcome of the experiment.
+\end{itemize}
+
+\subsubsection*{Logical Understanding:}
+
+\begin{itemize}
+    \item Fix outcome $\rightarrow$ get one waveform $\rightarrow$ called a realization
+    \item Fix time $\rightarrow$ get a random variable
+\end{itemize}
+
+Thus:
+
+\begin{itemize}
+    \item \textbf{Along time $\rightarrow$ waveform}
+    \item \textbf{At fixed time $\rightarrow$ random variable}
+\end{itemize}
+
+\subsection{Realizations and Random Variables}
+
+\begin{itemize}
+    \item A stochastic process connects:
+    \begin{itemize}
+        \item Time domain behavior (waveforms)
+        \item Probabilistic behavior (random variables)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Key Interpretation:}
+
+\begin{itemize}
+    \item A process can be seen as:
+    \begin{itemize}
+        \item A \textbf{family of random variables indexed by time}
+        \item OR a \textbf{collection of sample functions}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Characterization of Stochastic Process}
+
+The process is described using:
+
+\begin{itemize}
+    \item First-order density function
+    \item Second-order density function
+    \item N-th order density function
+\end{itemize}
+
+\subsubsection*{Logical Flow:}
+
+\begin{itemize}
+    \item To fully describe a process:
+    $\rightarrow$ Need joint distributions at multiple time instants
+    \item Increasing order $\rightarrow$ more complete description
+\end{itemize}
+
+\section{Statistical Moments}
+
+\subsection{Mean of Stochastic Process}
+
+\begin{itemize}
+    \item Mean is defined as:
+    \begin{itemize}
+        \item Expected value at each time instant
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Interpretation:}
+
+\begin{itemize}
+    \item Provides \textbf{average behavior over realizations}
+    \item Depends on time in general
+\end{itemize}
+
+\subsection{Autocorrelation Function}
+
+\begin{itemize}
+    \item Measures similarity between values at two time instants
+\end{itemize}
+
+\subsubsection*{Logical Role:}
+
+\begin{itemize}
+    \item Captures \textbf{dependency structure}
+    \item Helps understand:
+    \begin{itemize}
+        \item Memory of process
+        \item Predictability
+    \end{itemize}
+\end{itemize}
+
+\subsection{Properties of Autocorrelation}
+
+From slides (structure only):
+
+\begin{itemize}
+    \item Symmetry-related properties
+    \item Dependence on time indices
+    \item Relation to covariance
+\end{itemize}
+
+\subsection{Covariance Function}
+
+\begin{itemize}
+    \item Defined using mean and autocorrelation
+\end{itemize}
+
+\subsubsection*{Logical Relation:}
+
+\begin{itemize}
+    \item Covariance = measure of \textbf{fluctuation around mean}
+\end{itemize}
+
+\section{Positive Definite Functions and Matrices}
+
+\subsection{Positive Definite Function}
+
+\begin{itemize}
+    \item Introduced via autocorrelation properties
+\end{itemize}
+
+\subsubsection*{Key Idea:}
+
+\begin{itemize}
+    \item Autocorrelation must satisfy \textbf{positive definiteness}
+\end{itemize}
+
+\subsection{Matrix Expansion}
+
+\begin{itemize}
+    \item Autocorrelation values arranged in matrix form
+\end{itemize}
+
+\subsubsection*{Logical Flow:}
+
+\begin{enumerate}
+    \item Construct matrix using autocorrelation values
+    \item Apply quadratic form
+    \item Show non-negativity
+\end{enumerate}
+
+\subsection{Quadratic Form Analogy}
+
+\begin{itemize}
+    \item Used to interpret positive definiteness
+\end{itemize}
+
+\subsubsection*{Extension:}
+
+\begin{itemize}
+    \item From 2D $\rightarrow$ 3D interpretation (as per slides)
+\end{itemize}
+
+\subsection{Positive Definite Matrices}
+
+\begin{itemize}
+    \item Definition based on quadratic form
+\end{itemize}
+
+\subsubsection*{Methods Mentioned:}
+
+\begin{itemize}
+    \item Elimination method
+    \item Matrix-based verification
+\end{itemize}
+
+\subsection{Example (Positive Definite Matrix)}
+
+\begin{itemize}
+    \item Slides include:
+    \begin{itemize}
+        \item Example 1
+        \item Continued steps
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Important Note:}
+
+\begin{itemize}
+    \item Since derivation is not present in text, only structure is retained:
+    \begin{itemize}
+        \item Matrix formation
+        \item Stepwise checking
+        \item Final conclusion
+    \end{itemize}
+\end{itemize}
+
+\section{Stationary Stochastic Processes}
+
+\subsection{Concept of Stationarity (Time Invariance)}
+
+\begin{itemize}
+    \item Stationarity implies \textbf{statistical properties do not change with time}
+\end{itemize}
+
+\subsection{Types of Stationarity}
+
+\begin{itemize}
+    \item Strict Sense Stationary (SSS)
+    \item Wide Sense Stationary (WSS)
+\end{itemize}
+
+\subsection{Strict Sense Stationary (SSS)}
+
+\subsubsection*{Definition (from structure):}
+
+\begin{itemize}
+    \item All joint distributions are invariant under time shift
+\end{itemize}
+
+\subsubsection*{Logical Meaning:}
+
+\begin{itemize}
+    \item Complete statistical behavior remains unchanged
+\end{itemize}
+
+\subsection{Wide Sense Stationary (WSS)}
+
+\subsubsection*{Definition (from structure):}
+
+\begin{itemize}
+    \item Only:
+    \begin{itemize}
+        \item Mean is constant
+        \item Autocorrelation depends on time difference
+    \end{itemize}
+\end{itemize}
+
+\subsection{WSS vs SSS}
+
+\subsubsection*{Implied Comparison:}
+
+\begin{itemize}
+    \item SSS $\rightarrow$ stronger condition
+    \item WSS $\rightarrow$ weaker condition
+\end{itemize}
+
+\subsection{Gaussian Process: WSS $\Rightarrow$ SSS?}
+
+\begin{itemize}
+    \item Slides explicitly raise this question
+\end{itemize}
+
+\subsubsection*{Logical Insight:}
+
+\begin{itemize}
+    \item For Gaussian processes:
+    \begin{itemize}
+        \item WSS may imply SSS (as discussed conceptually in slides)
+    \end{itemize}
+\end{itemize}
+
+\subsection{Example Problems}
+
+Slides include:
+
+\begin{itemize}
+    \item Example $\rightarrow$ Solution $\rightarrow$ continuation
+\end{itemize}
+
+\subsubsection*{Structure of Solution:}
+
+\begin{enumerate}
+    \item Identify process properties
+    \item Compute mean
+    \item Compute autocorrelation
+    \item Check stationarity conditions
+\end{enumerate}
+
+(No explicit formulas provided in text, so not expanded)
+
+\subsection{HW Example: White Noise Process}
+
+\begin{itemize}
+    \item Mentioned as a standard example under WSS
+\end{itemize}
+
+\section{Ergodic Process}
+
+\subsection{Concept}
+
+\begin{itemize}
+    \item Introduced after stationarity
+\end{itemize}
+
+\subsubsection*{Key Idea:}
+
+\begin{itemize}
+    \item Relates \textbf{time averages} and \textbf{ensemble averages}
+\end{itemize}
+
+\subsection{Time Average of Random Process}
+
+Slides indicate stepwise development:
+
+\begin{enumerate}
+    \item Define time averaging
+    \item Compare with statistical average
+    \item Establish condition for equality
+\end{enumerate}
+
+\subsection{Key Logical Flow:}
+
+\begin{itemize}
+    \item If: Time average = Ensemble average
+    $\rightarrow$ Process is ergodic
+\end{itemize}
+
+\section{Example 4 (Detailed in Slides)}
+
+\subsection*{Structure of Solution:}
+
+\subsubsection*{Step 1: Mean Calculation}
+
+\begin{itemize}
+    \item Multiple slides devoted to:
+    \begin{itemize}
+        \item Mean derivation
+        \item Continuation steps
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Step 2: Autocorrelation}
+
+\begin{itemize}
+    \item Step-by-step expansion
+    \item Multiple continuation slides
+\end{itemize}
+
+\subsubsection*{Step 3: Final Result}
+
+\begin{itemize}
+    \item Concluding expression given
+\end{itemize}
+
+\textbf{Note:} Since explicit expressions are not visible in text, only logical progression is preserved.
+
+\section{Mathematical Tools for Studying Random Processes}
+
+Slides mention tools but do not expand in text.
+
+\section{Final Revision Concepts}
+
+\subsection{Generalized Representation}
+
+\begin{itemize}
+    \item Process expressed in generalized mathematical form
+\end{itemize}
+
+\subsection{Key Takeaways}
+
+\begin{itemize}
+    \item Stochastic process = collection of random variables
+    \item Mean and autocorrelation define second-order behavior
+    \item Positive definiteness is essential for validity
+    \item Stationarity simplifies analysis
+    \item Ergodicity connects theory with observation
+\end{itemize}
+
+\section*{Exam Preparation Strategy (Based on This Lecture)}
+
+Focus on:
+
+\begin{enumerate}
+    \item Definitions:
+    \begin{itemize}
+        \item SSS, WSS, Ergodic
+    \end{itemize}
+    \item Conceptual differences:
+    \begin{itemize}
+        \item WSS vs SSS
+    \end{itemize}
+    \item Logical conditions:
+    \begin{itemize}
+        \item Time invariance
+        \item Dependence on time difference
+    \end{itemize}
+    \item Properties:
+    \begin{itemize}
+        \item Autocorrelation
+        \item Positive definiteness
+    \end{itemize}
+    \item Problem-solving flow:
+    \begin{itemize}
+        \item Mean $\rightarrow$ Autocorrelation $\rightarrow$ Check stationarity
+    \end{itemize}
+\end{enumerate}
+
+\end{document}
